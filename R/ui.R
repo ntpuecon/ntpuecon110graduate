@@ -1,6 +1,9 @@
 form <- function(){
   require(htmltools)
   tagList(
+    tags$style("
+      button.datepicker-day-button {
+color: black;}"),
     tags$div(class = "row",
       tags$form(class = "col s12",
         tags$div(class = "row",
@@ -31,12 +34,7 @@ form <- function(){
                 type = "text",
                 class = "datepicker"),
               tags$label(`for`="inputBday",
-                "生日"),
-              tags$script(
-                "$(document).ready(function(){
-              $('.datepicker').datepicker();
-            });"
-              )
+                "生日")
             )
           }),
         tagList(
@@ -55,6 +53,7 @@ form <- function(){
   )
 }
 card = function(content, title="Card Title"){
+  require(htmltools)
   tagList(
     tags$style("
     i.material-icons.prefix {
@@ -93,7 +92,7 @@ card = function(content, title="Card Title"){
   )
 }
 wishCard = function(){
-  materialiseDash::attachMaterialiseDep(
+  attachAppDependencies(
     form() |> card()
   )
 }
@@ -124,5 +123,7 @@ tree = function(){
     all_files = T
   ))
 }
-tree() |> app$update()
+# tree() |> app$update()
 
+globe() |> plotly_build() -> p_globe
+View(p_globe)

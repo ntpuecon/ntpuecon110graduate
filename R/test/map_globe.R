@@ -53,8 +53,9 @@ get_z = function(x, y, R=1){
   return(z)
 }
 get_z = function(x, y, R=1){
-   z = sqrt(R**2-(x**2+y**2))
-   return(z)
+  if(R**2 < x**2+y**2) return(NaN)
+  z = sqrt(R**2-(x**2+y**2))
+  return(z)
 }
 get_z(0.3, 0.3)
 R=1
@@ -73,40 +74,45 @@ map_xyz = function(R=1, length.out=100){
   purrr::map_dbl(
     listxyzValid, ~{.x[["result"]]}
   ) -> z
-  cbind(mat[pickValid],z)
+  cbind(mat[pickValid,],z)
 }
-map_xyz() -> listxyz
-purrr::map_lgl(
-  listxyz, ~{!is.nan(.x[["result"]])}
-) -> pickValid
-listxyz[pickValid] -> listxyzValid
-purrr::map_dbl(
-  listxyzValid, ~{.x[["result"]]}
-) -> z
+map_xyz() -> matxyz
 
-{
-  -> z
-  cbind(mat[,1], mat[,2], z) -> mat
-  colnames(mat) <- c("x","y","z")
-  mat
-}
-# get map -----------------------------------------------------------------
-
-
-map_xyz() -> mat
-(mat[,3] ==2) -> whichNotGlobe
-mat[-whichNotGlobe,]-> matValid
-View(matValid)
-plot_ly() |>
-  add_surface(z=matValid)
-
-data.frame(
-  notGlobe=whichNotGlobe
-) -> df2
-df2 |> cbind(as.data.frame(mat)) -> df_globe
-View(mat)
-plotly::plot_ly(
-  df_globe
-) |>
+View(matxyz)
+matxyz |>
+  tidyr::pivot_wider(
+    names_from = "Var2",
+    values_from = "z"
+  ) |>
+  as.matrix() -> matSurfacexyz
+plotly::plot_ly() |>
   add_surface(
-    z=mat)
+    z=matSurfacexyz
+  )
+
+library(plotly)
+plotly::plot_ly(data=matxyz, x=~Var1, y=~Var2,z=~z) |>
+  add_markers()
+
+seq(-R,R, length.out=length.out)-> r
+matrix(0, nrow=length(r), ncol = length(r)) -> matSurface
+matxyz[,1:2]
+row.names(matSurface) <- r
+col.names(matSurface) <- r
+round(r, 4) -> rproxy
+row.names(matSurface) <- as.character(rproxy)
+col.names(matSurface) <- as.character(rproxy)
+xtick = as.character(
+  matxyz[1, 1] |> round(4)
+)
+ytick = as.character(
+  matxyz[1, 2] |> round(4)
+)
+xtick
+ytick
+rproxy
+matSurface |> View()
+matSurface[xtick, ytick]
+volcano |> View()
+
+globe()

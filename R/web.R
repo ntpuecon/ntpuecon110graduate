@@ -8,11 +8,7 @@ dependency = function(){
     script="js/script.js"
   )
 }
-attachAppDependencies = function(p){
-  htmltools::tagList(
-    p, dependency()
-  )
-}
+
 create_widget= function(){
   globe() |>
     htmlwidgets::onRender("function(e){widget=e;}") |>
