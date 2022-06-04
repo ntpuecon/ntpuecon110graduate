@@ -1,4 +1,6 @@
-
+#warning {
+  display: none;
+}
 .fixed-action-btn {
   position: absolute !important;
 }
