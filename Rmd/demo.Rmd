@@ -24,6 +24,8 @@ wishCard() |> attachAppDependencies() |> econWeb::browseTag2()
 
 ## Form to Google Form
 
+https://medium.com/@shashikg.iitk/how-to-create-custom-html-forms-and-submit-responses-to-google-sheet-834d7b3a13b0
+
 https://medium.com/front-end-augustus-study-notes/custom-google-form-en-f7be4c27a98b
 
 https://www.letswrite.tw/custom-google-form/
