@@ -38,3 +38,20 @@ googleFormCrawling = function(){
 load_appmeta = function(){
   appmeta <<- readRDS("data/appmeta.Rds")
 }
+
+googleFormEmbed <- function(){
+  tagList(
+    tags$style('
+
+'),
+    tags$div(class="googleform",
+      tags$iframe(id="myframe",src = "https://docs.google.com/forms/d/e/1FAIpQLSeNTrYowvSJBn8iuAt3JjLvrWc-C_20aZGBF2FFW7zRVliFkg/viewform?embedded=true",
+        width = "640",
+        height = "780",
+        frameborder = "0",
+        marginheight = "0",
+        marginwidth = "0",
+        "Loading…")
+    )
+  )
+}

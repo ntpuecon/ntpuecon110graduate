@@ -1,31 +1,44 @@
-form <- function(){
+generate_ids= function(){
+  c("inputName", "inputId", "inputBday", "inputWords")
+}
+generate_googleForm = function(.names=makenames()){
+  list(
+    entries=.names,
+    postUrl=ntpuecon110graduate::webAppUrl
+  )
+}
+form <- function(ids=generate_ids(), googleForm=generate_googleForm()){
   require(htmltools)
+  names = googleForm$entries
+  postUrl= googleForm$postUrl
+
   tagList(
     tags$style("
       button.datepicker-day-button {
 color: black;}"),
     tags$div(class = "row",
       tags$form(class = "col s12",
+        action=postUrl,
         tags$div(class = "row",
           {tags$div(class = "input-field col s12",
             tags$i(class = "material-icons prefix",
               "account_circle"),
-            tags$input(id = "icon_prefix",
+            tags$input(id = ids[[1]], name=names[[1]],
               type = "text",
               class = "validate"),
-            tags$label(`for` = "icon_prefix",
+            tags$label(`for` = ids[[1]],
               "姓名"))}),
         tags$div(class = "row",
           {tags$div(class = "input-field col s12",
             tags$i(class = "material-icons prefix",
               "badge"),
-            tags$input(id = "icon_telephone",
+            tags$input(id = ids[[2]], name=names[[2]],
               type = "tel",
               class = "validate"),
-            tags$label(`for` = "icon_telephone",
+            tags$label(`for` = ids[[2]],
               "學號"))}),
         tags$div(class = "row",
-          pickDate()()
+          pickDate(id=ids[[3]],name=names[[3]])()
         ),
           # {
           #   tags$div(class = "input-field col s12",
@@ -44,14 +57,18 @@ color: black;}"),
             tags$div(class = "input-field col s12",
               tags$i(class = "material-icons prefix",
                 "volunteer_activism"),
-              tags$textarea(id = "inputWords",
+              tags$textarea(id = ids[[4]], name=names[[4]],
                 class = "materialize-textarea"),
-              tags$label(`for` = "inputWords",
+              tags$label(`for` = ids[[4]],
                 "給同學的祝福")))
         )
 
         )
       )
+  ) -> tagForm
+  tagList(
+    tagForm,
+    ntpuecon110graduate::formDependency
   )
 }
 card = function(content, title="Card Title"){
@@ -63,7 +80,7 @@ card = function(content, title="Card Title"){
     }
       "),
     tags$div(class = "row",
-      tags$div(class = "col s12 m6",
+      tags$div(class = "col s12 m4 offset-m4",
         tags$div(class = "card",
           tags$div(class = "card-content white-text",
             tags$span(class = "card-title",
@@ -77,7 +94,7 @@ card = function(content, title="Card Title"){
                   "預覽",
                   tags$i(class = "material-icons right",
                     "pageview"))},
-                {tags$button(class = "btn waves-effect waves-light purple lighten-1",
+                {tags$button(class = "btn waves-effect waves-light purple lighten-1", id="submit",
                   type = "submit",
                   name = "action",
                   "送出",
@@ -93,9 +110,11 @@ card = function(content, title="Card Title"){
           )))
   )
 }
-wishCard = function(){
+wishCard = function(ids, googleForm){
   attachAppDependencies(
-    form() |> card()
+    tagList(
+    form(ids, googleForm) |> card(),
+      googleFormEmbed())
   )
 }
 mainUI = function(){

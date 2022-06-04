@@ -1,0 +1,75 @@
+---
+title: "Untitled"
+author: "林茂廷"
+date: '2022-06-04'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## apptest
+
+```{r}
+apptest::apptest(port=4321) -> app
+```
+
+
+## 卡片
+
+```{r}
+wishCard() |> attachAppDependencies() |> econWeb::browseTag2()
+```
+
+## Form to Google Form
+
+https://medium.com/front-end-augustus-study-notes/custom-google-form-en-f7be4c27a98b
+
+https://www.letswrite.tw/custom-google-form/
+
+```{r}
+devtools::load_all(".")
+
+load_appmeta() -> appmeta
+appmeta$load$googleForm()
+ids = c("inputName", "inputId","inputBday", "inputWords") 
+wishCard(ids=ids, googleForm)
+
+wishCard(
+  ids = generate_ids(),
+  googleForm=generate_googleForm()) |>
+  econWeb::browseTag2()
+``` 
+
+
+```{r}
+wishCard(
+  ids = generate_ids(),
+  googleForm=generate_googleForm()) |> app$update()
+```
+
+### Globe
+
+```{r}
+globe() |>
+  htmlwidgets::onRender("function(e){widget=e;}") |> app$update()
+```
+
+```{js}
+$gframe = $("#myframe");
+console.log($gframe);
+```
+
+###
+
+Web app Url
+```{r}
+webAppUrl = "https://script.google.com/macros/s/AKfycbzwvtI0uutxZT15CSnoCNPLHDcChgd-2vHLInsL9jzJa0ioKyu-BJJwo2WTfzG8xFlo3w/exec"
+deploymentId="AKfycbzwvtI0uutxZT15CSnoCNPLHDcChgd-2vHLInsL9jzJa0ioKyu-BJJwo2WTfzG8xFlo3w"
+```
+
+```{js}
+
+```
+

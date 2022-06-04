@@ -1,4 +1,5 @@
-pickDate = function(){
+pickDate = function(id, name){
+  require(htmltools)
   tagList(
   tags$style("
       button.datepicker-day-button {
@@ -8,10 +9,10 @@ color: black;}"),
       tags$i(class = "material-icons prefix",
         "cake"),
       tags$input(
-        id="inputBday",
+        id=id, name=name,
         type = "text",
         class = "datepicker"),
-      tags$label(`for`="inputBday",
+      tags$label(`for`=id,
         "生日")
     )
   }
@@ -28,6 +29,6 @@ color: black;}"),
   }
 }
 
-pd=pickDate()
-
-pd() |> attachAppDependencies() |> econWeb::browseTag2()
+# pd=pickDate()
+#
+# pd() |> attachAppDependencies() |> econWeb::browseTag2()
