@@ -13,7 +13,8 @@ option1.yearRange = [1992, 2005];
     option1
   );
 
-
+  $submitbutton = $("#submit");
+  $submitbutton.click(send_data);
 
   $form = $("form");
   console.log($form);
@@ -36,6 +37,7 @@ data[$inputWords.attr("name")]=
   $inputWords.val() || '未填寫';
 console.log(data)
 }
+var datasent;
 function send_data(){
         var form_data = document.getElementsByClassName("form-data"); //retrieve filled form data
         var i;
@@ -43,6 +45,8 @@ function send_data(){
         for(i=0; i<form_data.length; i++){
           data.push(form_data[i].value);
         }
+        datasent=data;
+        console.log(data);
         google.script.run.saveData(data); // send to google app script
         document.getElementById("form").style.display = "none"; // make form invisible
 }
