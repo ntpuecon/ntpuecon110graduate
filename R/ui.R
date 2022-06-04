@@ -25,18 +25,20 @@ color: black;}"),
             tags$label(`for` = "icon_telephone",
               "學號"))}),
         tags$div(class = "row",
-          {
-            tags$div(class = "input-field col s12",
-              tags$i(class = "material-icons prefix",
-                "cake"),
-              tags$input(
-                id="inputBday",
-                type = "text",
-                class = "datepicker"),
-              tags$label(`for`="inputBday",
-                "生日")
-            )
-          }),
+          pickDate()()
+        ),
+          # {
+          #   tags$div(class = "input-field col s12",
+          #     tags$i(class = "material-icons prefix",
+          #       "cake"),
+          #     tags$input(
+          #       id="inputBday",
+          #       type = "text",
+          #       class = "datepicker"),
+          #     tags$label(`for`="inputBday",
+          #       "生日")
+          #   )
+          # }),
         tagList(
           tags$div(class = "row",
             tags$div(class = "input-field col s12",
@@ -124,6 +126,3 @@ tree = function(){
   ))
 }
 # tree() |> app$update()
-
-globe() |> plotly_build() -> p_globe
-View(p_globe)
