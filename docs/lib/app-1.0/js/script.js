@@ -36,7 +36,6 @@ data[$inputWords.attr("name")]=
   $inputWords.val() || '未填寫';
 console.log(data)
 }
-
 function send_data(){
         var form_data = document.getElementsByClassName("form-data"); //retrieve filled form data
         var i;
@@ -46,8 +45,7 @@ function send_data(){
         }
         google.script.run.saveData(data); // send to google app script
         document.getElementById("form").style.display = "none"; // make form invisible
-};
-
+}
 submitForm = function(){
 jQuery.ajax({
         type: "GET",
