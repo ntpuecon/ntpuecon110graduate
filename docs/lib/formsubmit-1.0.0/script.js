@@ -10,6 +10,8 @@ $(function(){
   $btnTree.click(function(){
     location.replace("/form.html")
   })
+
+
   // pick Date
   option1 = {defaultDate: new Date(2002, 1, 1)};
 option1.setDefaultDate = new Date(2001, 12, 1);

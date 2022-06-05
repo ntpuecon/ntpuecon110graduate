@@ -12,9 +12,22 @@ tag_card <-function(content, name){
         tag_divisionTop(),
         tag_cardContent(content),
         tag_divisionBtm(),
-        tag_signature(name))))
+        tag_signature(name),
+        ),
+      button_forward()))
   }
+button_forward = function(){
+  tagList(
+    tags$style('
 
+'),
+    tags$a(class = "btn-floating pulse lighten-3",
+      id="nextpage",
+      href="globe.html",
+      tags$i(class = "material-icons",
+        "arrow_forward_ios"))
+  )
+}
 tag_divisionTop = function(){
     tags$div(class = "divisionTop",
       tags$div(class = "divisionTop-line"))}
