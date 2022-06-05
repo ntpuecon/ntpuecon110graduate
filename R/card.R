@@ -21,7 +21,7 @@ button_forward = function(){
     tags$style('
 
 '),
-    tags$a(class = "btn-floating pulse lighten-3",
+    tags$a(class = "btn-floating pulse purple lighten-3",
       id="nextpage",
       href="globe.html",
       tags$i(class = "material-icons",
