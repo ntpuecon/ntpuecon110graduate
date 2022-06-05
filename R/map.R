@@ -16,11 +16,11 @@ globe2 <- function(lat= 24.9442979, lon=121.370319, roll=0) {
   fig <- fig %>% layout(geo = g)
   fig
 }
-library(plotly)
-df <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_february_us_airport_traffic.csv')
-lat= 24.9442979
-lon=121.370319
-roll=0
+# library(plotly)
+# df <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_february_us_airport_traffic.csv')
+# lat= 24.9442979
+# lon=121.370319
+# roll=0
 globe <- function(lat= 24.9442979, lon=121.370319, roll=0) {
   require(plotly)
   g <- list(
@@ -58,7 +58,11 @@ globe <- function(lat= 24.9442979, lon=121.370319, roll=0) {
   fig
 }
 plot_capitalTrees = function(){
+  library(plotly)
 
+  lat= 24.9442979
+  lon=121.370319
+  roll=0
   # jsonlite::fromJSON("http://techslides.com/demos/country-capitals.json") -> capitals
   # capitals$tree="🌲"
   # usethis::use_data(capitals, overwrite = T)
@@ -110,4 +114,16 @@ globe_zoom = function(p=globe(), zoom=1){
     p,
     geo=list(projection=list(scale=1.3))
   )
+}
+button_toPlantTree = function(){
+  tagList(
+    tags$style('
+
+'),
+    tags$a(class = "btn-floating btn-large pulse  purple lighten-1", id="btn-tree",
+      tags$i(class = "material-icons",
+        "forest"))
+  ) -> tag_element
+
+  tag_element |> attachAppDependencies()
 }

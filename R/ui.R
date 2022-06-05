@@ -137,9 +137,10 @@ globeCard = function(){
         plot_capitalTrees()   |>
           htmlwidgets::onRender("function(e){widget=e;}")
         ),
-      buttons_playStop())
+      buttons_playStop(),
+      tags$div(class="plant-tree", button_toPlantTree()))
   ) |>
-    card2()
+    card2()  |> attachAppDependencies()
 }
 wishCard = function(ids, .names, postUrl){
 
