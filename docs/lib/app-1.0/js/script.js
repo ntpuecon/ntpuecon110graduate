@@ -61,7 +61,10 @@ option1.yearRange = [1992, 2005];
   $submitButton.click(post_data);
   console.log($form);
 
-  $(".pushpin").pushpin();
+  $pushpin = $(".pushpin");
+
+
+  $pushpin.pushpin();
 
   $output_frame = $("#output_frame");
   $output_frame.on('DOMSubtreeModified', function(){

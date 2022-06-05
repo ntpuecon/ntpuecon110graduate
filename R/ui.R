@@ -154,13 +154,14 @@ card2 = function(content, title="Card Title"){
       "),
     tags$div(class = "row",
       tags$div(class = "col s12 m6 offset-m3 l4 offset-l4",
-        tags$div(class = "card pushpin pinned",
+        tags$div(class = "card pushpin",
           tags$div(class = "card-content white-text",
             tags$span(class = "card-title",
               title),
             content,
           )
-        )))
+        ),
+        tags$script("$(function(){ $('.pushpin').pushpin();})")))
   )
 }
 globeCard = function(){
