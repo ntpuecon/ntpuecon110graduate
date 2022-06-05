@@ -111,6 +111,10 @@ card = function(content, title="Card Title"){
       tags$div(class = "col s12 m6 offset-m3 l4 offset-l4",
         tags$div(class = "card",
           tags$div(class = "card-content white-text",
+            tags$a(
+              class="right", href="globe.html",
+              tags$i(class="material-icons close", 'close')
+            ),
             tags$span(class = "card-title",
               title),
             tagList(content,
