@@ -1,5 +1,10 @@
 $(function(){
 
+  $play=$("#play");
+  $stop=$("#stop");
+  $play.click(animateRotation);
+  $stop.click(stopRotation);
+
   // pick Date
   option1 = {defaultDate: new Date(2002, 1, 1)};
 option1.setDefaultDate = new Date(2001, 12, 1);

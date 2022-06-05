@@ -35,11 +35,18 @@ globe <- function(lat= 24.9442979, lon=121.370319, roll=0) {
     showland = TRUE,
     landcolor = toRGB("#e5ecf6")
   )
+  df$text="🌳"
+  df$tree2="🌲"
+  View(df)
   fig <- plot_geo(df, lat = ~lat, lon = ~long)
-  fig <- fig %>% add_markers(
-    text = ~paste(airport, city, state, paste("Arrivals:", cnt), sep = "<br />"),
-    color = ~cnt, symbol = I("square"), size = I(8), hoverinfo = "text"
-  )
+  fig <- fig |>
+    add_text(
+      text=~tree2
+    ) %>%
+    plotly::layout(
+      showlegend=F,
+      geo=g
+    )
   fig <- fig %>% colorbar(title = "Incoming flights<br />February 2011")
   fig <- fig %>% layout(
     title = 'Most trafficked US airports<br />(Hover for airport)', geo = g
@@ -50,7 +57,22 @@ globe <- function(lat= 24.9442979, lon=121.370319, roll=0) {
   fig <- fig %>% layout(geo = g)
   fig
 }
+plot_capitalTrees = function(){
 
+  # jsonlite::fromJSON("http://techslides.com/demos/country-capitals.json") -> capitals
+  # capitals$tree="🌲"
+  # usethis::use_data(capitals, overwrite = T)
+  fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude)
+  fig <- fig |>
+    add_text(
+      text=~tree
+    ) %>%
+    plotly::layout(
+      showlegend=F,
+      geo=g
+    )
+  fig
+}
 globe_ratate = function(p=globe(), rotate=15){
   p=globe()
   p |> plotly::plotly_build() -> p2
