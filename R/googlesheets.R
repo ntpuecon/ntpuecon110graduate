@@ -80,3 +80,6 @@ createFormData <- function(.names=names(), sheetname="mySheet"){
   steps
 
 }
+browse_googleSheet = function(){
+  browseURL("https://docs.google.com/spreadsheets/d/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/edit#gid=0")
+}

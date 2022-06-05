@@ -75,7 +75,7 @@ wishCard(
   postUrl="https://script.google.com/macros/s/AKfycbzOL5ZUBa2QUtCwM-jMJ0x-KpeR0baxkLy90pLjSCN74BwzcxvgsdNfrprEBd3Zk_Jrew/exec") |> app$update()
 ```
 
-### Globe card
+## Globe card
 
 ```{r}
 globeCard() |> 
@@ -160,5 +160,18 @@ deploymentId="AKfycbzwvtI0uutxZT15CSnoCNPLHDcChgd-2vHLInsL9jzJa0ioKyu-BJJwo2WTfz
 
 ```{js}
 
+```
+
+### data emit
+
+```{r}
+globeCard() |>
+  attachAppDependencies() |> app$update()
+```
+
+```{d3 data=}
+widget.on("plotly_click", function(e){eda_click=e;
+countryname = eda_click.points[0].data.name;
+console.log(countryname);});
 ```
 
