@@ -4,7 +4,7 @@ modal = function(content,id="tree", modal_button=modalButton){
     modal_button(href=paste0("#",id), id=id),
     tags$div(id = id,
       class = "modal",
-      style="overflow: hidden;",
+      style="overflow: hidden;max-height:fit-content;",
       tags$div(class = "modal-content",
         content),
       tags$div(class = "modal-footer",
