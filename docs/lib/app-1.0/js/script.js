@@ -19,6 +19,9 @@ option1.yearRange = [1992, 2005];
     option1
   );
 
+  var elemsModal = document.querySelectorAll('.modal');
+    var instancesMdl = M.Modal.init(elemsModal);
+
   //$submitbutton = $("#submit");
   //$submitbutton.click(send_data);
 

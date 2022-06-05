@@ -138,7 +138,11 @@ globeCard = function(){
           htmlwidgets::onRender("function(e){widget=e;}")
         ),
       buttons_playStop(),
-      tags$div(class="plant-tree", button_toPlantTree()))
+      tags$div(class="plant-tree",
+        modal(content=greetingForm())
+        # button_toPlantTree()
+        )
+      )
   ) |>
     card2()  |> attachAppDependencies()
 }
