@@ -13,8 +13,8 @@ option1.yearRange = [1992, 2005];
     option1
   );
 
-  $submitbutton = $("#submit");
-  $submitbutton.click(send_data);
+  //$submitbutton = $("#submit");
+  //$submitbutton.click(send_data);
 
   $form = $("form");
   console.log($form);
