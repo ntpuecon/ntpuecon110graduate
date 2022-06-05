@@ -61,7 +61,7 @@ greeting_card <- function(content, name, dependency=NULL){
 
   tagList(tag_card(tag_content, name), dependency) |>
     attachAppDependencies() |>
-    card3()
+    card4()
 }
 teacher_greeting_card = function(){
   require(htmltools)
@@ -78,7 +78,7 @@ teacher_greeting_card = function(){
     name = "茂廷老師"
   )
 }
-card3 = function(content){
+card4 = function(content){
   require(htmltools)
   tagList(
     tags$style("

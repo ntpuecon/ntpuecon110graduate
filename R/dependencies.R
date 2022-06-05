@@ -2,8 +2,8 @@ appDep = function(){
   list(
     {
       htmltools::htmlDependency(name = "app", version = "1.0",
-        src = c(file = normalizePath("./inst/app")), script = c("js/script.js", "js/picker.js", "js/picker.date.js", "js/globe.js", "js/appScript.js"),
-        stylesheet =c("css/style.css", "css/card.css")
+        src = c(file = normalizePath("./inst/app")), script = c("js/script.js", "js/picker.js", "js/picker.date.js", "js/globe.js", "js/appScript.js", "js/control.js"),
+        stylesheet =c("css/style.css", "css/card.css", "css/control.css")
       )
     }
   )

@@ -2,8 +2,15 @@ $(function(){
 
   $play=$("#play");
   $stop=$("#stop");
-  $play.click(animateRotation);
-  $stop.click(stopRotation);
+  $play.click(
+    function(){
+      $play.toggle();
+      $stop.toggle();
+      animateRotation()});
+  $stop.click(function(){
+    $stop.toggle();
+    $play.toggle();
+    stopRotation()});
 
   //$btnTree=$("#btn-tree");
 

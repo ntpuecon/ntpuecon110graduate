@@ -164,23 +164,6 @@ card2 = function(content, title="Card Title"){
         tags$script("$(function(){ $('.pushpin').pushpin();})")))
   )
 }
-globeCard = function(){
-  tags$div(class = "row",
-    id="globe",
-    tags$div(class = "col s12",
-      tags$div(class="row",
-        plot_capitalTrees()   |>
-          htmlwidgets::onRender("function(e){widget=e;}")
-        ),
-      buttons_playStop(),
-      tags$div(class="plant-tree",
-        # modal(content=greetingForm())
-        button_toPlantTree()
-        )
-      )
-  ) |>
-    card2()  |> attachAppDependencies()
-}
 wishCard = function(ids, .names, postUrl){
 
     form(ids, .names, postUrl) |> card() |>

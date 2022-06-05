@@ -1,21 +1,37 @@
-function rotate_globe(){
+function rotate_globe(right=2){
   currentLon=widget.layout.geo.projection.rotation.lon;
 
   Plotly.animate(widget,
-  {layout: {geo: {projection: {rotation: {lon: currentLon+15}}}}},
+  {layout: {geo: {projection: {rotation: {lon: currentLon+right}}}}},
   {
       transition: {
-        duration: 100
+        duration: 500
       },
       frame: {
-        duration: 100
+        duration: 500
+      }
+    }
+  );
+}
+function rotate_globe2(up=5){
+  currentLat=widget.layout.geo.projection.rotation.lat;
+  if(currentLat>34 && up > 0){up=0}
+  if(currentLat<-45 && up < 0 ){up=0}
+  Plotly.animate(widget,
+  {layout: {geo: {projection: {rotation: {lat: currentLat+up}}}}},
+  {
+      transition: {
+        duration: 600
+      },
+      frame: {
+        duration: 600
       }
     }
   );
 }
 function animateRotation(){
   intervalID = setInterval(
-    function(){requestAnimationFrame(rotate_globe);},200);
+    function(){requestAnimationFrame(rotate_globe);},650);
 
 }
 var intervalID;
