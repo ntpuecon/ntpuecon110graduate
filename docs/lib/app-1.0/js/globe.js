@@ -26,4 +26,21 @@ $(function(){
   widget.on("plotly_click", stopRotation, {passive: true});
 })
 
+var clearTree = {
+    visible: false
+};
 
+clearTrees = function(){
+  let nonTaiwanTraces = Array.from({length: 244}, (_, i) => i + 1)
+  Plotly.restyle(widget, clearTree, nonTaiwanTraces);
+  treesPlanted =1;
+}
+
+var plantTree = {
+   visible: true
+}
+treesPlanted = 1;
+plantOneMoreTree = function(){
+  Plotly.restyle(widget, plantTree, treesPlanted)
+  treesPlanted = treesPlanted+1
+}

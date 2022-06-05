@@ -44,18 +44,105 @@ wishCard(
   econWeb::browseTag2()
 ``` 
 
+```{r}
+dir.create("docs")
+appDep() |> 
+  htmltools::save_html("docs/index.html")
+```
+
+
+
+### Form
+
+  * <https://github.com/levinunnink/html-form-to-google-sheet>
+
+```{r}
+form(.names=c("name","schoolId", "bday", "words"),
+  postUrl="https://script.google.com/macros/s/AKfycbzOL5ZUBa2QUtCwM-jMJ0x-KpeR0baxkLy90pLjSCN74BwzcxvgsdNfrprEBd3Zk_Jrew/exec") |> 
+  attachAppDependencies() |> app$update()
+```
+
+
+https://script.google.com/macros/s/AKfycbzOL5ZUBa2QUtCwM-jMJ0x-KpeR0baxkLy90pLjSCN74BwzcxvgsdNfrprEBd3Zk_Jrew/exec
+
+https://docs.google.com/spreadsheets/d/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/edit#gid=0
+
 
 ```{r}
 wishCard(
   ids = generate_ids(),
-  googleForm=generate_googleForm()) |> app$update()
+  .names=c("name","schoolId", "bday", "words"),
+  postUrl="https://script.google.com/macros/s/AKfycbzOL5ZUBa2QUtCwM-jMJ0x-KpeR0baxkLy90pLjSCN74BwzcxvgsdNfrprEBd3Zk_Jrew/exec") |> app$update()
 ```
 
-### Globe
+### Globe card
 
 ```{r}
-globe() |>
-  htmlwidgets::onRender("function(e){widget=e;}") |> app$update()
+globeCard() |> 
+  attachAppDependencies() |> 
+  htmltools::save_html("docs/index.html")
+  app$update()
+```
+
+```{r}
+globeCard() |>
+  attachAppDependencies() |> app$update()
+```
+
+
+### restyle
+
+#### Only Taipei visible
+
+```{js}
+var clearTree = {
+    visible: false
+};
+
+clearTrees = function(){
+  let nonTaiwanTraces = Array.from({length: 244}, (_, i) => i + 1)
+  Plotly.restyle(widget, clearTree, nonTaiwanTraces);
+  treesPlanted =1;
+}
+
+var plantTree = {
+   visible: true
+}
+treesPlanted = 1;
+plantOneMoreTree = function(){
+  Plotly.restyle(widget, plantTree, treesPlanted)
+  treesPlanted = treesPlanted+1
+}
+```
+
+
+```{r}
+whichIsTaipei = which(capitals$CapitalName=="Taipei")
+rbind(capitals[whichIsTaipei,], capitals[-whichIsTaipei,]) -> capitals
+
+plot_capitalTrees() |> 
+  plotly::plotly_build() -> p
+View(p)
+```
+
+```{r}
+plot_capitalTrees() |>
+  plotly::style(
+    visible=F
+  ) -> p1 
+p1
+p1 |> 
+  plotly::style(
+    visible=T,
+    traces=1
+  )
+
+```
+
+```{r}
+plot_capitalTrees() |>
+  htmlwidgets::onRender("function(e){widget=e;}") |> 
+  attachAppDependencies() |> app$update()
 ```
 
 ```{js}

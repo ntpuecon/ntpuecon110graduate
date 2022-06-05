@@ -11,22 +11,23 @@ color: black;}"),
       tags$input(
         id=id, name=name,
         type = "text",
-        class = "datepicker"),
+        class = "datepicker form-data"),
       tags$label(`for`=id,
         "生日")
     )
   }
     )-> tagPickDate
 
-  file.edit("inst/ntpuecon110/js/pickdate.js")
-  function(){
-    tagList(
-      tagPickDate,
-      htmltools::includeScript(
-        "inst/ntpuecon110/js/pickdate.js"
-      )
-    )
-  }
+  # file.edit("inst/ntpuecon110/js/pickdate.js")
+  # function(){
+  #   tagList(
+  #     tagPickDate,
+  #     htmltools::includeScript(
+  #       "inst/ntpuecon110/js/pickdate.js"
+  #     )
+  #   )
+  # }
+  tagPickDate
 }
 
 # pd=pickDate()

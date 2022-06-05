@@ -1,0 +1,3 @@
+page_teacherGreeting = function(){
+
+}

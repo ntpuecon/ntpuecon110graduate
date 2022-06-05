@@ -7,68 +7,82 @@ generate_googleForm = function(.names=makenames()){
     postUrl=ntpuecon110graduate::webAppUrl
   )
 }
-form <- function(ids=generate_ids(), googleForm=generate_googleForm()){
+form <- function(ids=generate_ids(), .names= NULL, postUrl= NULL){
   require(htmltools)
-  names = googleForm$entries
-  postUrl= googleForm$postUrl
 
+
+  input_name = {tags$div(class = "input-field col s12",
+    tags$i(class = "material-icons prefix",
+      "account_circle"),
+    tags$input(id = ids[[1]], name=.names[[1]],
+      type = "text",
+      class = "form-data validate"),
+    tags$label(`for` = ids[[1]],
+      "姓名"))}
+  input_id = {tags$div(class = "input-field col s12",
+    tags$i(class = "material-icons prefix",
+      "badge"),
+    tags$input(id = ids[[2]], name=.names[[2]],
+      type = "tel",
+      class = "form-data validate"),
+    tags$label(`for` = ids[[2]],
+      "學號"))}
+  input_bday = pickDate(id=ids[[3]],name=.names[[3]])
+  input_words={tags$div(class = "input-field col s12",
+    tags$i(class = "material-icons prefix",
+      "volunteer_activism"),
+    tags$textarea(id = ids[[4]], name=.names[[4]],
+      class = "materialize-textarea form-data"),
+    tags$label(`for` = ids[[4]],
+      "給同學的祝福"))}
+  buttons =       {
+    tags$div(class = "row center-align",
+      {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",
+        type = "button",
+        name = "action",
+        "預覽",
+        tags$i(class = "material-icons right",
+          "pageview"))},
+      {tags$button(class = "btn waves-effect waves-light purple lighten-1", id="submitButton",
+        type = "submit",
+        name = "action",
+        "送出",
+        tags$i(class = "material-icons right",
+          "send"))})
+  }
+  outputframe = tags$iframe(
+    name="output_frame", src="", id="output_frame", style="display:none;"
+  )
+
+  tagForm = {tags$form(class = "col s12",
+    method="POST",
+    action=postUrl,
+    target="output_frame",
+    tags$div(class = "row",
+      input_name),
+    tags$div(class = "row",
+      input_id),
+    tags$div(class = "row",
+      input_bday
+    ),
+    tags$div(class = "row",
+      input_words
+    ),
+    buttons
+  )}
   tagList(
     tags$style("
       button.datepicker-day-button {
 color: black;}"),
     tags$div(class = "row",
-      tags$form(class = "col s12",
-        action=postUrl,
-        tags$div(class = "row",
-          {tags$div(class = "input-field col s12",
-            tags$i(class = "material-icons prefix",
-              "account_circle"),
-            tags$input(id = ids[[1]], name=names[[1]],
-              type = "text",
-              class = "validate"),
-            tags$label(`for` = ids[[1]],
-              "姓名"))}),
-        tags$div(class = "row",
-          {tags$div(class = "input-field col s12",
-            tags$i(class = "material-icons prefix",
-              "badge"),
-            tags$input(id = ids[[2]], name=names[[2]],
-              type = "tel",
-              class = "validate"),
-            tags$label(`for` = ids[[2]],
-              "學號"))}),
-        tags$div(class = "row",
-          pickDate(id=ids[[3]],name=names[[3]])()
-        ),
-          # {
-          #   tags$div(class = "input-field col s12",
-          #     tags$i(class = "material-icons prefix",
-          #       "cake"),
-          #     tags$input(
-          #       id="inputBday",
-          #       type = "text",
-          #       class = "datepicker"),
-          #     tags$label(`for`="inputBday",
-          #       "生日")
-          #   )
-          # }),
-        tagList(
-          tags$div(class = "row",
-            tags$div(class = "input-field col s12",
-              tags$i(class = "material-icons prefix",
-                "volunteer_activism"),
-              tags$textarea(id = ids[[4]], name=names[[4]],
-                class = "materialize-textarea"),
-              tags$label(`for` = ids[[4]],
-                "給同學的祝福")))
-        )
-
-        )
+      id="form",
+      tagForm,
+      outputframe
       )
   ) -> tagForm
   tagList(
     tagForm,
-    ntpuecon110graduate::formDependency
+    formDependency
   )
 }
 card = function(content, title="Card Title"){
@@ -80,27 +94,13 @@ card = function(content, title="Card Title"){
     }
       "),
     tags$div(class = "row",
-      tags$div(class = "col s12 m4 offset-m4",
+      tags$div(class = "col s12 m6 offset-m3 l4 offset-l4",
         tags$div(class = "card",
           tags$div(class = "card-content white-text",
             tags$span(class = "card-title",
               title),
             content,
-            {
-              tags$div(class = "row center-align",
-                {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",
-                  type = "submit",
-                  name = "action",
-                  "預覽",
-                  tags$i(class = "material-icons right",
-                    "pageview"))},
-                {tags$button(class = "btn waves-effect waves-light purple lighten-1", id="submit",
-                  type = "submit",
-                  name = "action",
-                  "送出",
-                  tags$i(class = "material-icons right",
-                    "send"))})
-            }),
+            ),
             {tags$div(class = "card-reveal",
               tags$span(class = "card-title grey-text text-darken-4",
                 "Card Title",
@@ -110,12 +110,42 @@ card = function(content, title="Card Title"){
           )))
   )
 }
-wishCard = function(ids, googleForm){
-  attachAppDependencies(
-    tagList(
-    form(ids, googleForm) |> card(),
-      googleFormEmbed())
+card2 = function(content, title="Card Title"){
+  require(htmltools)
+  tagList(
+    tags$style("
+    i.material-icons.prefix {
+     color: purple;
+    }
+      "),
+    tags$div(class = "row",
+      tags$div(class = "col s12 m6 offset-m3 l4 offset-l4",
+        tags$div(class = "card",
+          tags$div(class = "card-content white-text",
+            tags$span(class = "card-title",
+              title),
+            content,
+          )
+        )))
   )
+}
+globeCard = function(){
+  tags$div(class = "row",
+    id="globe",
+    tags$div(class = "col s12",
+      tags$div(class="row",
+        plot_capitalTrees()   |>
+          htmlwidgets::onRender("function(e){widget=e;}")
+        ),
+      buttons_playStop())
+  ) |>
+    card2()
+}
+wishCard = function(ids, .names, postUrl){
+
+    form(ids, .names, postUrl) |> card() |>
+    attachAppDependencies()
+      # googleFormEmbed())
 }
 mainUI = function(){
   require(htmltools)
@@ -123,6 +153,21 @@ mainUI = function(){
     class="row center-align",
     div(class="col s12", globe()),
     div(class="col s12 center-align", tree() ))
+}
+buttons_playStop = function(){
+  tags$div(class = "row center-align",
+    {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",
+      type = "button",
+      name = "action", id="stop",
+      # "預覽",
+      tags$i(class = "material-icons center",
+        "stop"))},
+    {tags$button(class = "btn waves-effect waves-light purple lighten-1", id="play",
+      type = "button",
+      name = "action",
+      # "送出",
+      tags$i(class = "material-icons center",
+        "play_arrow"))})
 }
 appDemo = function(){
   mainUI() |>

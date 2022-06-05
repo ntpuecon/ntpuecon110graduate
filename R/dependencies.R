@@ -3,7 +3,8 @@ appDep = function(){
     {
       htmltools::htmlDependency(name = "app", version = "1.0",
         src = c(file = normalizePath("./inst/app")), script = c("js/script.js", "js/picker.js", "js/picker.date.js", "js/globe.js"),
-        stylesheet = "css/style.css")
+        stylesheet =c("css/style.css", "css/card.css")
+      )
     }
   )
 }

@@ -62,10 +62,31 @@ plot_capitalTrees = function(){
   # jsonlite::fromJSON("http://techslides.com/demos/country-capitals.json") -> capitals
   # capitals$tree="🌲"
   # usethis::use_data(capitals, overwrite = T)
+  whichIsTaipei = which(capitals$CapitalName=="Taipei")
+  rbind(capitals[whichIsTaipei,], capitals[-whichIsTaipei,]) -> capitals
+  capitals$CountryName = factor(
+    capitals$CountryName, levels=capitals$CountryName
+  )
+
+  require(plotly)
+  g <- list(
+    projection = list(
+      type ='orthographic',#   'natural earth',
+      rotation = list(
+        lon=lon,
+        lat=lat,
+        roll=roll
+      )
+    ),
+    showland = TRUE,
+    landcolor = toRGB("#e5ecf6")
+  )
+
   fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude)
   fig <- fig |>
     add_text(
-      text=~tree
+      text=~tree,
+      name=~CountryName
     ) %>%
     plotly::layout(
       showlegend=F,
