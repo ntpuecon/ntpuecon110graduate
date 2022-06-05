@@ -2,8 +2,15 @@ $(function(){
 
   $play=$("#play");
   $stop=$("#stop");
-  $play.click(animateRotation);
-  $stop.click(stopRotation);
+  $play.click(
+    function(){
+      $play.toggle();
+      $stop.toggle();
+      animateRotation()});
+  $stop.click(function(){
+    $stop.toggle();
+    $play.toggle();
+    stopRotation()});
 
   //$btnTree=$("#btn-tree");
 
@@ -61,6 +68,11 @@ option1.yearRange = [1992, 2005];
   $submitButton.click(post_data);
   console.log($form);
 
+  $pushpin = $(".pushpin");
+
+
+  $pushpin.pushpin();
+
   $output_frame = $("#output_frame");
   $output_frame.on('DOMSubtreeModified', function(){
   console.log('changed');
@@ -74,6 +86,7 @@ option1.yearRange = [1992, 2005];
 data = {}
 
 get_data = function(){
+  data["timestamp"]=Date.now();
   data[$inputName.attr("name")]=
   $inputName.val() || '未填寫';
 data[$inputId.attr("name")]=
