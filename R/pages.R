@@ -10,3 +10,10 @@ page_globeCard = function(){
       "docs/globe.html"
     )
 }
+page_form = function(){
+  greetingForm() |>
+    htmltools::save_html(
+      "docs/form.html"
+    )
+
+}
