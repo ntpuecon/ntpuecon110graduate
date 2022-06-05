@@ -120,7 +120,7 @@ button_toPlantTree = function(){
     tags$style('
 
 '),
-    tags$a(class = "btn-floating btn-large pulse  purple lighten-1", id="btn-tree",
+    tags$a(class = "btn-floating btn-large pulse  purple lighten-1", id="btn-tree", href="form.html",
       tags$i(class = "material-icons",
         "forest"))
   ) -> tag_element

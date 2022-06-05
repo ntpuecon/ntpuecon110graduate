@@ -5,11 +5,11 @@ $(function(){
   $play.click(animateRotation);
   $stop.click(stopRotation);
 
-  $btnTree=$("#btn-tree");
+  //$btnTree=$("#btn-tree");
 
-  $btnTree.click(function(){
-    location.replace("/form.html")
-  })
+  //$btnTree.click(function(){
+  //  location.replace("/form.html")
+  //})
 
 
   // pick Date
