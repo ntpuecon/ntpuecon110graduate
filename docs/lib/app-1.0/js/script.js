@@ -6,6 +6,10 @@ $(function(){
   $stop.click(stopRotation);
 
   $btnTree=$("#btn-tree");
+
+  $btnTree.click(function(){
+    location.replace("/form.html")
+  })
   // pick Date
   option1 = {defaultDate: new Date(2002, 1, 1)};
 option1.setDefaultDate = new Date(2001, 12, 1);
@@ -26,7 +30,39 @@ option1.yearRange = [1992, 2005];
   //$submitbutton.click(send_data);
 
   $form = $("form");
+
+  success=function(response){
+    submitResponse=response;
+    $progressBar.toggle();
+    if(submitResponse.result==="success"){
+      console.log("success");
+      $("#success").toggle();
+      $("#successtitle").toggle();
+    }
+    console.log(response);
+  }
+  $progressBar = $("#progress");
+
+  post_data = function(){
+    $form.toggle()
+    $progressBar.toggle()
+    get_data()
+    $.ajax({
+    type: "POST",
+    url: "https://script.google.com/macros/s/AKfycbzOL5ZUBa2QUtCwM-jMJ0x-KpeR0baxkLy90pLjSCN74BwzcxvgsdNfrprEBd3Zk_Jrew/exec",
+    data: data,
+    success: success,
+    dataType: "json"
+  });
+  }
+  $submitButton = $("#submitButton");
+  $submitButton.click(post_data);
   console.log($form);
+
+  $output_frame = $("#output_frame");
+  $output_frame.on('DOMSubtreeModified', function(){
+  console.log('changed');
+});
 
   $inputName=$("#inputName");
   $inputId=$("#inputId");

@@ -1,3 +1,6 @@
+.card .card-action{
+  border-top: none;
+}
 #warning {
   display: none;
 }

@@ -85,6 +85,20 @@ color: black;}"),
     formDependency
   )
 }
+inProgress= function(hide=T){
+  .style=""
+  if(hide) .style=css("display"="none")
+  tagList(
+    tags$style('
+
+'),
+    tags$div(class = "progress purple lighten-4", id="progress",
+      style=.style,
+      tags$div(class = "indeterminate purple"))
+  ) -> tag_element
+
+  tag_element |> attachAppDependencies()
+}
 card = function(content, title="Card Title"){
   require(htmltools)
   tagList(
@@ -99,16 +113,32 @@ card = function(content, title="Card Title"){
           tags$div(class = "card-content white-text",
             tags$span(class = "card-title",
               title),
-            content,
+            tagList(content,
+              inProgress(),
+              tags$h6("上傳成功", style="display:none;color:#212121", id="successtitle")
+              )
             ),
+          tags$div(class="card-action",
+              {tags$a(class = "waves-effect waves-light btn purple",
+                id="success",
+                style="display:none;",
+                href="globe.html",
+                tags$i(class = "material-icons right",
+                  "public"),
+                "返回地球")},
+            # tags$a(
+            #   id="success",
+            #   style="display:none;",
+            #   href="#", "返回地球")),
             {tags$div(class = "card-reveal",
               tags$span(class = "card-title grey-text text-darken-4",
                 "Card Title",
                 tags$i(class = "material-icons right",
                   "close")),
               tags$p("Here is some more information about this product that is only revealed once clicked on."))}
-          )))
-  )
+          )
+          ))
+  ))
 }
 card2 = function(content, title="Card Title"){
   require(htmltools)
@@ -139,8 +169,8 @@ globeCard = function(){
         ),
       buttons_playStop(),
       tags$div(class="plant-tree",
-        modal(content=greetingForm())
-        # button_toPlantTree()
+        # modal(content=greetingForm())
+        button_toPlantTree()
         )
       )
   ) |>
