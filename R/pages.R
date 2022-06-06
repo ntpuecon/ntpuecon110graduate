@@ -33,6 +33,7 @@ page_teacherGreeting = function(){
     )
 }
 page_globeCard = function(){
+  require(htmltools)
   globeCard3() |>
     htmltools::save_html(
       "docs/globe.html"
