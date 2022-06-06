@@ -1,0 +1,96 @@
+
+# target a tree
+
+```{js}
+targetTree = function(lat, lon){
+  Plotly.relayout(widget,
+    {geo: {
+        center: {
+        lat: lat,
+        lon: lon},
+        projection: {
+        type: "orthographic",
+        rotation: {
+        lat: lat,
+        lon: lon,
+        roll: 0
+      }}}
+      }
+  )
+}
+targetTreeLayout = function(lat, lon){
+return {geo: {
+        center: {
+          lat: lat,
+          lon: lon},
+        projection: {
+          type: "orthographic",
+          rotation: {
+            lat: lat,
+            lon: lon,
+            roll: 0 }}
+      }}
+}
+
+function move2target(lat, lon) {
+  currentTarget= {lon: lon, lat: lat};
+  Plotly.animate(widget, {
+    layout: targetTreeLayout(lat,lon)
+  }, {
+    transition: {
+      duration: 500,
+      easing: 'cubic-in-out'
+    },
+	  frame: {
+		  duration: 500
+	  }
+  })
+}
+
+```
+
+## zoom
+
+```{r}
+plot_capitalTrees() |>
+  plotly::layout(
+    geo=list(projection=list(scale=1)) #3
+  )
+```
+
+```{js}
+function zoomIn2target() {
+  Plotly.animate(widget, {
+    layout: {geo: {projection: {scale: 3}}}
+  }, {
+    transition: {
+      duration: 500,
+      easing: 'cubic-in-out'
+    },
+	  frame: {
+		  duration: 500
+	  }
+  })
+}
+function zoomOutFromtarget() {
+  Plotly.animate(widget, {
+    layout: {geo: {projection: {scale: 1}}}
+  }, {
+    transition: {
+      duration: 500,
+      easing: 'cubic-in-out'
+    },
+	  frame: {
+		  duration: 500
+	  }
+  })
+}
+function zoomInTarget_relayout(){
+Plotly.relayout(widget, {geo: {projection: {scale: 3}}});
+}
+function targetTree_zoom(lat, lon){
+  move2target(lat, lon);
+  zoomTimeoutId=setTimeout(zoomIn2target, 500)
+}
+```
+

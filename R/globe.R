@@ -32,18 +32,13 @@ globeCard3 = function(){
     tags$div(class = "globe",
       # style="background: #828282;",
       plot_capitalTrees()   |>
-        # plotly::layout(
-        #   plot_bgcolor="transparent",
-        #   paper_bgcolor="transparent",
-        #   geo=list(bgcolor="#3399FF",
-        #     framecolor="#ffffff",
-        #     oceancolor="#ffffff",
-        #     lakecolor="aliceblue")
-        # ) |> #|> plotly::api_create()
         htmlwidgets::onRender("function(e){widget=e;}"),
       tags$div(class="row",
-        tags$div(class= "col s3",
-          control()))
+        tags$div(class= "col s4",
+          control()),
+        tags$div(class="col s1",
+          div(tags$i(class="material-icons","zoom_in", id="zoom-in")),
+          div(tags$i(class="material-icons", "zoom_out", id="zoom-out"))))
     )
 
   ) |> attachAppDependencies()

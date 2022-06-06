@@ -164,12 +164,6 @@ card2 = function(content, title="Card Title"){
         tags$script("$(function(){ $('.pushpin').pushpin();})")))
   )
 }
-wishCard = function(ids, .names, postUrl){
-
-    form(ids, .names, postUrl) |> card() |>
-    attachAppDependencies()
-      # googleFormEmbed())
-}
 mainUI = function(){
   require(htmltools)
   div(

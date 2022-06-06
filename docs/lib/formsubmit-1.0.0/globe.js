@@ -1,3 +1,20 @@
+$(function(){
+   $("#zoom-in").click(animateZoom);
+  $("#zoom-out").click(animateZoomBack);
+  $play=$("#play");
+  $stop=$("#stop");
+  $play.click(
+    function(){
+      $play.toggle();
+      $stop.toggle();
+      animateRotation()});
+  $stop.click(function(){
+    $stop.toggle();
+    $play.toggle();
+    stopRotation()});
+    lyStart=get_layout_center_geo();
+});
+
 function rotate_globe(right=2){
   currentLon=widget.layout.geo.projection.rotation.lon;
 
@@ -30,6 +47,7 @@ function rotate_globe2(up=5){
   );
 }
 function animateRotation(){
+  resetPlayLat();
   intervalID = setInterval(
     function(){requestAnimationFrame(rotate_globe);},650);
 
@@ -60,3 +78,77 @@ plantOneMoreTree = function(){
   Plotly.restyle(widget, plantTree, treesPlanted)
   treesPlanted = treesPlanted+1
 }
+targetTree = function(lat, lon){
+  Plotly.relayout(widget,
+    {geo: {
+        center: {
+        lat: lat,
+        lon: lon},
+        projection: {
+        type: "orthographic",
+        rotation: {
+        lat: lat,
+        lon: lon,
+        roll: 0
+      }}}
+      }
+  )
+}
+currentScale=1;
+zoomIn = function(){
+  currentScale=currentScale+1;
+  var layout={geo: {projection: {scale: currentScale}}}
+  Plotly.relayout(widget, layout);
+}
+zoomOut = function(){
+  if(currentScale > 1){
+    currentScale=currentScale-1;}
+  var layout={geo: {projection: {scale: currentScale}}}
+  Plotly.relayout(widget, layout);
+}
+
+animateZoom = function(ms=3500){
+  Plotly.animate(widget, {
+    layout: get_layout4zoom()
+  }, {
+    transition: {
+      duration: ms,
+      easing: 'linear-in'
+    }
+  })
+}
+animateZoomBack = function(ms=3500){
+  let ly= get_layout4zoom();
+  ly.geo.projection.scale=1
+  Plotly.animate(widget, {
+    layout: ly
+  }, {
+    transition: {
+      duration: ms,
+      easing: 'cubic-in-out'
+    }
+  })
+}
+
+resetPlayLat = function(){
+  let ly=get_layout_center_geo();
+  ly.geo_projection.rotation.lat = lyStart.geo_projection.rotation.lat;
+  Plotly.relayout(widget, {geo: {projection: {rotation: ly.geo_projection.rotation, type: "orthographic"}}});
+}
+
+
+get_layout4zoom = function(){
+let ly=get_layout_center_geo();
+ly.geo_projection.scale=5;
+let zoomLy= {geo: {center: ly.center, projection: ly.geo_projection}};
+return zoomLy;
+}
+
+
+
+function get_layout_center_geo(){
+  let center=widget._fullLayout.center;
+  let geo_projection=widget._fullLayout.geo.projection;
+  return {center: center, geo_projection: geo_projection}
+}
+
