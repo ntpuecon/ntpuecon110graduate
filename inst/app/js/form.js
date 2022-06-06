@@ -1,12 +1,4 @@
-$(function(){
-  $form = $("form");
 
-  $progressBar = $("#progress");
-
-  $submitButton = $("#submitButton");
-  $submitButton.click(post_data);
-  check_valid_flat();
-})
 post_data = function(){
     $form.toggle();
     $progressBar.toggle();
@@ -85,3 +77,13 @@ jQuery.ajax({
     });
 }
 
+$(function(){
+  $form = $("form");
+
+  $progressBar = $("#progress");
+
+  $submitButton = $("#submitButton");
+  $submitButton.click(post_data);
+  get_validate_data();
+  check_valid_flat();
+})
