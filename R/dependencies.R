@@ -1,8 +1,17 @@
-appDep = function(){
+appDep = function(page=c("form", "globe")){
+  page=match.arg(page);
+
+  formjs=c("js/script.js", "js/picker.date.js", "js/picker.js", "js/form.js", "js/formProcessing.js")
+  globejs=c("js/globe.js", "js/control.js")
+  switch(
+    page,
+    "form"=formjs,
+    "globe"=globejs
+  ) -> pagejs
   list(
     {
       htmltools::htmlDependency(name = "app", version = "1.0",
-        src = c(file = normalizePath("./inst/app")), script = c("js/script.js", "js/picker.js", "js/picker.date.js", "js/globe.js", "js/appScript.js", "js/control.js", "js/form.js", "js/formProcessing.js"),
+        src = c(file = normalizePath("./inst/app")), script = c("js/appScript.js", pagejs ),
         stylesheet =c("css/style.css", "css/card.css", "css/control.css")
       )
     }
@@ -13,19 +22,21 @@ appDepOnCloud = function(){
     name="app",
     version = "1.0",
     src=c(href="https://ntpuecon.github.io/ntpuecon110graduate/lib/app-1.0/"),
-    script = c("js/script.js", "js/picker.js", "js/picker.date.js", "formsubmit.js"),
+    script = c("js/script.js", "js/picker.js", "js/picker.date.js"),
     stylesheet = "css/style.css",
     head = '<base target="_top">'
   )
 }
-attachAppDependencies = function(p){
+attachAppDependencies = function(p, page=c("form","globe")){
+  page=match.arg(page);
+
   dep = econWeb::Dependency()
 
   p |>
     # materialiseDash::attachMaterialiseDep() |>
   htmltools::tagList(
     dep$all(),
-    appDep()
+    appDep(page=page)
     # appDepOnCloud() #appDep()
   )
 }

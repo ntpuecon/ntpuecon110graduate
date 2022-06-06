@@ -41,7 +41,7 @@ globeCard3 = function(){
           div(tags$i(class="material-icons", "zoom_out", id="zoom-out"))))
     )
 
-  ) |> attachAppDependencies()
+  ) |> attachAppDependencies(page="globe")
 }
 card3 = function(content, title="Card Title"){
   require(htmltools)

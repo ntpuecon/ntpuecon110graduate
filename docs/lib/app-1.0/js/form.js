@@ -33,9 +33,8 @@ jQuery.ajax({
 
 check_valid_flat = function(){
   if(!localStorage.getItem("valid_flat")){
-    get_validate_data();
-    valid_flat=validates.values.flat();
-    localStorage.setItem("valid_flat", valid_flat.join(";"));
+    get_validate_data(processValidate_data);
+
   } else {
     valid_flat = localStorage.getItem("valid_flat").split(";");
   }

@@ -7,6 +7,6 @@ greetingForm = function(){
 wishCard = function(ids, .names, postUrl=NULL){
 
   form(ids, .names, postUrl) |> card() |>
-    attachAppDependencies()
+    attachAppDependencies(page="form")
   # googleFormEmbed())
 }
