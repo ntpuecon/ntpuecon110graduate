@@ -27,6 +27,27 @@ globeCard2 = function(){
   ) |>
     card3()  |> attachAppDependencies()
 }
+globeCard3 = function(){
+  tagList(
+    tags$div(class = "globe",
+      # style="background: #828282;",
+      plot_capitalTrees()   |>
+        # plotly::layout(
+        #   plot_bgcolor="transparent",
+        #   paper_bgcolor="transparent",
+        #   geo=list(bgcolor="#3399FF",
+        #     framecolor="#ffffff",
+        #     oceancolor="#ffffff",
+        #     lakecolor="aliceblue")
+        # ) |> #|> plotly::api_create()
+        htmlwidgets::onRender("function(e){widget=e;}"),
+      tags$div(class="row",
+        tags$div(class= "col s3",
+          control()))
+    )
+
+  ) |> attachAppDependencies()
+}
 card3 = function(content, title="Card Title"){
   require(htmltools)
   tagList(

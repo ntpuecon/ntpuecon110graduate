@@ -4,7 +4,7 @@ control = function(){
     class="conrol",
     tags$div(
       class="top-control",
-      div(class="control-btn",
+      div(class="control-btn center",
         tags$i(class="material-icons", "expand_less"))
     ),
     div(

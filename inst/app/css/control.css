@@ -1,9 +1,13 @@
 .conrol {
   position: relative;
-width: 120px;
-height: 120px;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
 
-background: #FFFFFF;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 120px;
+  background: #FFFFFF;
 }
 .top-control {
   /* Auto layout */
@@ -22,7 +26,10 @@ top: 0px;
 }
 
 .bottom-control {
-  /* Auto layout */
+/* down */
+
+
+/* Auto layout */
 
 display: flex;
 flex-direction: column;
@@ -36,17 +43,19 @@ width: 40px;
 height: 40px;
 left: calc(50% - 40px/2);
 bottom: 0px;
+
 }
 .left-control {
   /* left */
+
+/* left */
 
 
 /* Auto layout */
 
 display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
+flex-direction: row;
+align-items: center;
 padding: 0px;
 gap: 10px;
 
@@ -55,17 +64,17 @@ width: 40px;
 height: 40px;
 left: 0px;
 top: calc(50% - 40px/2);
+
 }
 .right-control {
   /* right */
 
 
 /* Auto layout */
-
 display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-end;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
 padding: 0px;
 gap: 10px;
 
@@ -74,6 +83,8 @@ width: 40px;
 height: 40px;
 right: 0px;
 top: calc(50% - 40px/2);
+
+
 
 }
 .center-control {
@@ -94,6 +105,11 @@ top: calc(50% - 40px/2);
 }
 .control-btn {
 
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
 width: 40px;
 height: 40px;
 

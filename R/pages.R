@@ -33,11 +33,11 @@ page_teacherGreeting = function(){
     )
 }
 page_globeCard = function(){
-  globeCard() |>
+  globeCard3() |>
     htmltools::save_html(
       "docs/globe.html"
     )
-  globeCard() |>
+  globeCard3() |>
     htmltools::save_html(
       "temp/globe.html"
     )
