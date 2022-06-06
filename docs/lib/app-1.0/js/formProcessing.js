@@ -38,6 +38,8 @@ get_validate_data = function(success){
 }
 
 $(function(){
+  //obtain valid_gsDat as an object with studentId
+  // as key, his/her submission as array value whose last entry should be the latest.
   get_gs_data(obtain_validGsData);
   //valid_gsData=obtain_validGsData();
 })

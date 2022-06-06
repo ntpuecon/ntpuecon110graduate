@@ -83,6 +83,6 @@ $(function(){
 
   $submitButton = $("#submitButton");
   $submitButton.click(post_data);
-  get_validate_data();
+  //get_validate_data();
   check_valid_flat();
 })
