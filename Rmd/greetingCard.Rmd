@@ -11,6 +11,7 @@ tags$div(class = "divider"))}
 
 ```{r}
 carouselExample() |> econWeb::browseTag2()
+carouselExample() |> app$update()
 ```
 
 

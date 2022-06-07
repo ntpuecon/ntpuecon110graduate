@@ -15,7 +15,6 @@ body {
 
 }
 .signature-img {
-  background: center no-repeat url(/lib/appImg-1.0.0/tree.png);
   background-size: contain;
 }
 .card-greeting .section {
