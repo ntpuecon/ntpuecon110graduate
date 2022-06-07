@@ -1,3 +1,21 @@
+greeting_card2 <-function(content=teacherWords, name="茂廷老師"){
+    # tags$div(class = "greeting",
+      tags$div(class = "card-greeting",
+        # tag_divisionTop(),
+        # tag_cardContent(processCardContent(content)),
+        greeting_cardContent(processCardContent(content)),
+        # tag_divisionBtm(),
+        tag_signature(name)
+      # )
+      ) |> attachAppDependencies()
+}
+greeting_cardContent = function(content){
+  tagList(
+    tags$div(class = "divider"),
+    tags$div(class = "section elegant-scroll",
+      content),
+    tags$div(class = "divider"))}
+
 updateCard = function(){
   fig=econWeb::Fig()
 
@@ -43,7 +61,11 @@ tag_signature = function(name){
   tags$div(class = "signature",
       tags$div(class = "signature-img"),
       tags$div(class = "signature-name",
-        name))}
+        name)) |>
+    tagList(
+    appImgDep())
+}
+
 # card_dependency <- function(){
 #   htmltools::htmlDependency(
 #     name="ntpuecon110graduate",
@@ -62,6 +84,12 @@ greeting_card <- function(content, name, dependency=NULL){
   tagList(tag_card(tag_content, name), dependency) |>
     attachAppDependencies() |>
     card4()
+}
+processCardContent = function(content){
+  content |> stringr::str_split("\n") -> split_content
+  split_content[[1]] |> stringr::str_subset("") -> content2
+  p_flowtext= function(x) tags$p(class="flow-text", x)
+  content2 |> purrr::map(p_flowtext)
 }
 teacher_greeting_card = function(){
   require(htmltools)

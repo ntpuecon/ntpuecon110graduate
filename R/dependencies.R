@@ -12,9 +12,18 @@ appDep = function(page=c("form", "globe")){
     {
       htmltools::htmlDependency(name = "app", version = "1.0",
         src = c(file = normalizePath("./inst/app")), script = c("js/appScript.js", pagejs ),
-        stylesheet =c("css/style.css", "css/card.css", "css/control.css")
+        stylesheet =c("css/style.css", "css/card.css", "css/control.css", "css/controlpanel.css")
       )
     }
+  )
+}
+appImgDep = function(){
+  htmltools::htmlDependency(
+    name="appImg",
+    version="1.0.0",
+    src=c(file=system.file("app-img", package="ntpuecon110graduate")),
+    stylesheet = "",
+    all_files = T
   )
 }
 appDepOnCloud = function(){

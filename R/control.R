@@ -1,7 +1,7 @@
 control = function(){
   require(htmltools)
   tags$div(
-    class="conrol",
+    class="control",
     tags$div(
       class="top-control",
       div(class="control-btn center",

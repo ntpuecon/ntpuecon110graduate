@@ -34,11 +34,8 @@ globeCard3 = function(){
       plot_capitalTrees()   |>
         htmlwidgets::onRender("function(e){widget=e;}"),
       tags$div(class="row",
-        tags$div(class= "col s4",
-          control()),
-        tags$div(class="col s1",
-          div(tags$i(class="material-icons","zoom_in", id="zoom-in")),
-          div(tags$i(class="material-icons", "zoom_out", id="zoom-out"))))
+        tags$div(class= "col s6 offset-s1 offset-m4",
+          controlpanel()))
     )
 
   ) |> attachAppDependencies(page="globe")

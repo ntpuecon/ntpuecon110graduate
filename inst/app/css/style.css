@@ -2,7 +2,43 @@ html,
 body {
     overscroll-behavior-y: contain;
 }
+.elegant-scroll::-webkit-scrollbar {
+  display: none;
+}
 
+.elegant-scroll {
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+.signature-img {
+  background: center no-repeat url(/lib/appImg-1.0.0/tree.png);
+  background-size: contain;
+}
+.card-greeting .section {
+      padding-top: 0rem !important;
+      }
+    .card-greeting > .divider:nth-last-child(2) {
+    margin-top: 9px;
+    }
+    .section {
+     height: 356px;
+     overflow: scroll;
+    }
+    p.flow-text {color:black !important;}
+    .card-greeting .divider {width: 100px;background:#333333}
+    .greeting-text {line-height: 24px;}
+    .container-greeting {height: 305px;}
+    .card-greeting {background: white;padding-top: 10px !important;
+    box-sizing: border-box;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+    .carousel {height:535px;}
+    .carousel .carousel-item {width:250px !important;}
+      .carousel .carousel-item {margin-top: -60px;}
 .card {
 /* position: fixed !important; */
 }

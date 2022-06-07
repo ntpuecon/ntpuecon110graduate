@@ -1,0 +1,44 @@
+# greeting card
+
+```{r}
+greeting_cardContent = function(content){
+tagList(
+tags$div(class = "divider"),
+tags$div(class = "section",
+ content),
+tags$div(class = "divider"))}
+```
+
+```{r}
+carouselExample() |> econWeb::browseTag2()
+```
+
+
+```{r}
+carouselExample() |>
+  tagList(
+    tags$style(".elegant-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+      .elegant-scroll {
+    
+/* Hide scrollbar for IE, Edge and Firefox */
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}")) |>
+      app$update()
+```
+
+
+```{js}
+elemsCarousel = document.querySelectorAll('.carousel');
+instances = M.Carousel.init(elemsCarousel, {
+width: "250px",
+shift: 20
+      // specify options here
+    });
+```
+

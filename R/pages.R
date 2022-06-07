@@ -32,6 +32,17 @@ page_teacherGreeting = function(){
       "temp/teacher_greeting.html"
     )
 }
+page_greetingCarousel = function(){
+  carouselExample()|>
+    htmltools::save_html(
+      "docs/greeting.html"
+    )
+
+  carouselExample()|>
+    htmltools::save_html(
+      "temp/greeting.html"
+    )
+}
 page_globeCard = function(){
   require(htmltools)
   globeCard3() |>
