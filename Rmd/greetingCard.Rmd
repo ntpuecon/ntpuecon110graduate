@@ -18,18 +18,9 @@ carouselExample() |> app$update()
 ```{r}
 carouselExample() |>
   tagList(
-    tags$style(".elegant-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-      .elegant-scroll {
-    
-/* Hide scrollbar for IE, Edge and Firefox */
-
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-
-}")) |>
+    tags$style("
+      .carousel-item.active {
+      transform: translateY(110.5px) !important;}")) |>
       app$update()
 ```
 
