@@ -32,63 +32,67 @@ switchControl = function(id="globeSwitch"){
 
   tag_element |> attachAppDependencies()
 }
-carouselPage = function(){
+settingBtn = function(){
   tagList(
+    tags$style('
+
+'),
+    tags$a(class = "btn-floating btn-large waves-effect waves-light red", id="setting",
+      tags$i(class = "material-icons",
+        "settings"))
+  )
+}
+carouselPage = function(){
+  require(htmltools)
+  tagList(
+    div(style="position:absolute; bottom: 5%; right: 5%",
+    settingBtn()),
+    div(style="position:absolute; bottom: 5%; right: 45%; display:none;", id="controlContainer",
+      globeControl()),
     tags$main(
     carouselExample()),
 
       div(
+        id="globeplace",
+        style="display:none;",
         class="globe-container2",
-        plot_capitalTrees() |>
-          plotly::layout(
-            margin=list(t=0, r=0, b=0, l=0)
-          )
-        # plotly::layout(
-        #   geo=list(projection=list(scale=0.4222))
-        # )
-      ),
-    sidenav(
-      tags$li(
-        tags$form(switchControl()
+        plot_capitalTrees()
+      )#,
+    # sidenav(
+    #   tags$li(
+    #        globeControl()
+    #       ))
+    ) |> tagList(sidenavCarouselDep()) |>
+    attachAppDependencies()
+}
+globeControl = function() {
+  div(
+    div(
+      class="center",
+      style="width:159px; margin:20px 0;",switchControl()),
+    controlpanel()) |>
+    tagList(
+      tags$style("
+        .switch label input[type=checkbox]:checked+.lever:after {
+        background: purple !important;
+        }
+        .switch label input[type=checkbox]:checked+.lever {
+        background: #f3e5f5 !important;
+        }
 
-          ))
-    ),
-    tags$style(
-      "
-      form {
-        padding: 30px 20px;
-      }
-      .globe-container2 div {
+        "),
+      htmltools::includeScript("inst/app/js/control.js")
 
-        /* Inside auto layout */
-
-          flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 1;
-      }
-      .globe-container2 {
-
-
-    position: absolute;
-    bottom: 30%;
-    left: 10%;
-    z-index: -1;
-
-        /* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 18px 0px;
-gap: 10px;
-
-/* position: relative; */
-width: 262px;
-height: 260px;
-
-      }
-
-      ")
+      )|> attachAppDependencies()
+}
+testGlobeControl = function(){
+  globeControl() |> app$update()
+}
+sidenavCarouselDep = function(){
+  htmltools::htmlDependency(
+    name="sidenameCarousel",
+    version="1.0.0",
+    src=c(file=normalizePath("inst/app/")),
+    stylesheet = "css/globe.css"
   )
 }

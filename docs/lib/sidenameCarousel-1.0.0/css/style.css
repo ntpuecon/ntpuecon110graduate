@@ -1,0 +1,119 @@
+html,
+body {
+    overscroll-behavior-y: contain;
+}
+.globe-container {
+  position: absolute;
+width: 165px;
+height: 177px;
+left: 0px;
+top: 341px;
+
+}
+.globe {
+  position: absolute;
+width: 163px;
+height: 174px;
+left: 0px;
+top: 0px;
+
+background: url(image.png);
+opacity: 0.5;
+}
+.elegant-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.elegant-scroll {
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+.carousel {
+    margin-top: -70px !important;
+}
+.signature-img {
+  background-size: contain;
+}
+.card-greeting .section {
+      padding-top: 0rem !important;
+      }
+    .card-greeting > .divider:nth-last-child(2) {
+    margin-top: 9px;
+    }
+    .section {
+     height: 356px;
+     overflow: scroll;
+    }
+    p.flow-text {color:black !important;}
+    .card-greeting .divider {width: 100px;background:#333333}
+    .greeting-text {line-height: 24px;}
+    .container-greeting {height: 305px;}
+    .card-greeting {background: white;padding-top: 10px !important;
+    box-sizing: border-box;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+    .carousel {height:535px;}
+    .carousel .carousel-item {width:250px !important;}
+      .carousel .carousel-item {margin-top: -60px;}
+.card {
+/* position: fixed !important; */
+}
+
+.material-icons.close{
+  color: purple;
+}
+.card .card-action{
+  border-top: none;
+}
+#warning {
+  display: none;
+}
+.fixed-action-btn {
+  position: absolute !important;
+}
+.page-footer, .footer-copyright {
+  background-color: white;
+}
+.menu-title {
+  width: fit-content;
+  height: fit-content;
+  background-color: white !important;
+  border-radius: 0%;
+}
+.menu-item {
+  /*width: fit-content;*/
+  height: fit-content;
+  padding: 5;
+  border-radius: 0%;
+  background-color: white;
+  border-color: grey;
+  color: black;
+  margin: 5;
+}
+ul.ul-float > li {
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+
+  display: inline-block !important;
+
+  /*width: 200px;*/
+}
+ul.ul-float {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+}

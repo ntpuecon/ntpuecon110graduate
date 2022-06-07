@@ -1,0 +1,10 @@
+
+# test globe
+
+```{r}
+carouselPage() |> 
+  tagList(
+    htmltools::includeScript("./inst/app/js/sidenavcontrol.js")
+  ) |> econWeb::browseTag2()
+```
+

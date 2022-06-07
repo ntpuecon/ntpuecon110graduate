@@ -12,7 +12,7 @@ appDep = function(page=c("form", "globe", "greeting")){
   list(
     {
       htmltools::htmlDependency(name = "app", version = "1.0",
-        src = c(file = normalizePath("./inst/app")), script = c("js/appScript.js", pagejs ),
+        src = c(file = normalizePath("./inst/app")), script = c("js/appScript.js", "js/materialiseinit.js", pagejs ),
         stylesheet =c("css/style.css", "css/card.css", "css/control.css", "css/controlpanel.css")
       )
     }
