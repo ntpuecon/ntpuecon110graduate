@@ -8,12 +8,55 @@ $(function(){
   $("#setting").click(function(){
     $("#controlContainer").toggle();
   });
+
+  $(".top-control").click(moveUp);
+  $(".bottom-control").click(moveDown);
+
+  $(".left-control").click(moveLeft);
+  $(".right-control").click(moveRight);
+
+/*
+  $("#globeplace").css("bottom","5%");
+  $("#globeplace")
   $(".top-control").click(function(){rotate_globe2()});
   $(".bottom-control").click(function(){rotate_globe2(-5)});
   $(".left-control").click(function(){rotate_globe()});
-  $(".right-control").click(function(){rotate_globe(-15)});
+  $(".right-control").click(function(){rotate_globe(-15)});*/
 
 })
+  verticalPos=Array(8).fill().map(function(e, i){return (i+1)*10+'%'});
+  horizontalPos=Array(8).fill().map(function(e, i){return (i+1)*10+'%'});
+  vindex=0;
+  hindex=0;
+moveDown=function(){
+    if(vindex>1){
+    vindex=vindex-1;
+    newVPosition=verticalPos[vindex]
+    $("#globeplace").css("bottom",newVPosition);
+  }
+  }
+moveLeft=function(){
+    if(hindex>0){
+    hindex=hindex-1;
+    newVPosition=horizontalPos[hindex]
+    $("#globeplace").css("left",newVPosition);
+  }
+  }
+
+moveRight = function(){
+    if(hindex<7){
+    hindex=hindex+1;
+    newVPosition=horizontalPos[hindex];
+    $("#globeplace").css("left",newVPosition);
+  }
+  }
+moveUp = function(){
+    if(vindex<7){
+    vindex=vindex+1;
+    newVPosition=verticalPos[vindex];
+    $("#globeplace").css("bottom",newVPosition);
+  }
+  }
 
 toggle_globe = function(){
   $("#globeplace").toggle()
