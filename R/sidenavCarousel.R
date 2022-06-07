@@ -47,7 +47,7 @@ carouselPage = function(){
   tagList(
     div(style="position:absolute; bottom: 5%; right: 5%",
     settingBtn()),
-    div(style="position:absolute; bottom: 5%; right: 45%; display:none;", id="controlContainer",
+    div(style="position:absolute; bottom: 5%; right: 45%; display:none;z-index:2;", id="controlContainer",
       globeControl()),
     tags$main(
     carouselExample()),
