@@ -2,6 +2,24 @@ html,
 body {
     overscroll-behavior-y: contain;
 }
+.globe-container {
+  position: absolute;
+width: 165px;
+height: 177px;
+left: 0px;
+top: 341px;
+
+}
+.globe {
+  position: absolute;
+width: 163px;
+height: 174px;
+left: 0px;
+top: 0px;
+
+background: url(image.png);
+opacity: 0.5;
+}
 .elegant-scroll::-webkit-scrollbar {
   display: none;
 }

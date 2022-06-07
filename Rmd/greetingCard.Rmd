@@ -14,6 +14,13 @@ carouselExample() |> econWeb::browseTag2()
 carouselExample() |> app$update()
 ```
 
+```{r}
+require(htmltools)
+tagList(
+  globeOverlay(),
+  carouselExample()
+  ) |> app$update()
+```
 
 ```{r}
 carouselExample() |>

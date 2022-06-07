@@ -1,3 +1,12 @@
+globeOverlay = function(){
+  require(htmltools)
+  div(
+    class="globe-container",
+     div(class="globe", plot_capitalTrees()   |>
+         htmlwidgets::onRender("function(e){widget=e;}"))
+  )
+
+}
 globeCard = function(){
   tags$div(class = "row",
     id="globe",
