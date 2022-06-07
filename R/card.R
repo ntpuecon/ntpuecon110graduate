@@ -59,7 +59,7 @@ tag_divisionBtm = function(){
       tags$div(class = "divisionBtm-line"))}
 tag_signature = function(name){
   tags$div(class = "signature",
-      tags$div(class = "signature-img"),
+      tags$div(class = "signature-img",style=css("background"="center no-repeat url(lib/appImg-1.0.0/tree.png)", `background-size`="contain")),
       tags$div(class = "signature-name",
         name)) |>
     tagList(
