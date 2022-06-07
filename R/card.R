@@ -7,7 +7,7 @@ greeting_card2 <-function(content=teacherWords, name="茂廷老師"){
         # tag_divisionBtm(),
         tag_signature(name)
       # )
-      ) |> attachAppDependencies()
+      ) |> attachAppDependencies(page="greeting")
 }
 greeting_cardContent = function(content){
   tagList(

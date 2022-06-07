@@ -1,4 +1,4 @@
-appDep = function(page=c("form", "globe")){
+appDep = function(page=c("form", "globe", "greeting")){
   page=match.arg(page);
 
   formjs=c("js/script.js", "js/picker.date.js", "js/picker.js", "js/form.js", "js/formProcessing.js")
@@ -6,7 +6,8 @@ appDep = function(page=c("form", "globe")){
   switch(
     page,
     "form"=formjs,
-    "globe"=globejs
+    "globe"=globejs,
+    "greeting"=c()
   ) -> pagejs
   list(
     {
@@ -36,7 +37,7 @@ appDepOnCloud = function(){
     head = '<base target="_top">'
   )
 }
-attachAppDependencies = function(p, page=c("form","globe")){
+attachAppDependencies = function(p, page=c("form","globe","greeting")){
   page=match.arg(page);
 
   dep = econWeb::Dependency()
