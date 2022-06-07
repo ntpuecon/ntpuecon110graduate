@@ -5,12 +5,12 @@ carousel = function(...){
   tags$div(class = "carousel",
     carouselItems) |>
     tagList(
-      tags$script("document.addEventListener('DOMContentLoaded', function() {
-    var elemsCarousel = document.querySelectorAll('.carousel');
-    var instCarousel = M.Carousel.init(elemsCarousel, {
-      // specify options here
-    });
-  });")
+  #     tags$script("document.addEventListener('DOMContentLoaded', function() {
+  #   var elemsCarousel = document.querySelectorAll('.carousel');
+  #   var instCarousel = M.Carousel.init(elemsCarousel, {
+  #     // specify options here
+  #   });
+  # });")
     ) |> attachAppDependencies()
 }
 carouselItem = function(..., href="#"){

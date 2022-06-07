@@ -18,6 +18,14 @@ appDep = function(page=c("form", "globe", "greeting")){
     }
   )
 }
+carouselPageDep = function(){
+  htmltools::htmlDependency(
+    name="carousel",
+    version="1.0.0",
+    src = c(file = normalizePath("./inst/app")),
+    script="js/carouselglobe.js"
+  )
+}
 appImgDep = function(){
   htmltools::htmlDependency(
     name="appImg",

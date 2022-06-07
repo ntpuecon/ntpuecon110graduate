@@ -33,12 +33,12 @@ page_teacherGreeting = function(){
     )
 }
 page_greetingCarousel = function(){
-  carouselExample()|>
+  carouselPage()|>
     htmltools::save_html(
       "docs/greeting.html"
     )
 
-  carouselExample()|>
+  carouselPage()|>
     htmltools::save_html(
       "temp/greeting.html"
     )

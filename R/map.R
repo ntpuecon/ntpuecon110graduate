@@ -66,6 +66,7 @@ plot_capitalTrees = function(){
   # jsonlite::fromJSON("http://techslides.com/demos/country-capitals.json") -> capitals
   # capitals$tree="🌲"
   # usethis::use_data(capitals, overwrite = T)
+
   whichIsTaipei = which(capitals$CapitalName=="Taipei")
   rbind(capitals[whichIsTaipei,], capitals[-whichIsTaipei,]) -> capitals
   capitals$CountryName = factor(
@@ -83,10 +84,13 @@ plot_capitalTrees = function(){
       )
     ),
     showland = TRUE,
-    landcolor = toRGB("#e5ecf6")
+    showocean= TRUE,
+    oceancolor="#e3f2fd",
+    bgcolor= "#00000000",
+    landcolor = "#fff8e1"
   )
-
-  fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude)
+  #plotly::plot_geo() |> plotly::layout(geo=g)
+  fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude, width="263", height="263")
   fig <- fig |>
     add_text(
       text=~tree,
@@ -94,8 +98,15 @@ plot_capitalTrees = function(){
     ) %>%
     plotly::layout(
       showlegend=F,
-      geo=g
-    )
+      plot_bgcolor="#00000000",
+      paper_bgcolor="#00000000",
+      geo=g,
+      margin=list(l=0, r=0, t=0, b=0)
+    ) |>
+    plotly::config(
+      displayModeBar=F
+    ) |>
+    htmlwidgets::onRender("function(e){widget=e;}")
   fig
 }
 globe_ratate = function(p=globe(), rotate=15){
