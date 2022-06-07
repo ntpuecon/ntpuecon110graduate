@@ -22,7 +22,7 @@ appImgDep = function(){
     name="appImg",
     version="1.0.0",
     src=c(file=system.file("app-img", package="ntpuecon110graduate")),
-    stylesheet = "",
+    stylesheet = "img.css",
     all_files = T
   )
 }
