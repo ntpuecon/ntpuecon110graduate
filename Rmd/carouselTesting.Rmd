@@ -1,10 +1,51 @@
 
 # test globe
 
+```{js}
+
+```
+
+
 ```{r}
+require(htmltools)
+require(reactR)
+devtools::load_all(".")
+
 carouselPage() |> 
   tagList(
     htmltools::includeScript("./inst/app/js/sidenavcontrol.js")
-  ) |> econWeb::browseTag2()
+  ) |>
+  app$update()
+  # econWeb::browseTag2()
+```
+
+```{js}
+currentCountry = 
+$("#greetingGallery > .carousel-item.active")[0].ariaLabel
+console.log(currentCountry)
+```
+
+
+```{r}
+require(htmltools)
+tag_carousel = function(){
+  require(htmltools)
+  tags$div(
+    class="carousel",
+    id="greetingGallery"
+  )
+}
+econWeb::Dependency() -> dep
+tag_carousel() |>
+  tagList(
+    dep$jquery$onCloud(),
+    dep$materialise$onCloud(),
+    # reactR::html_dependency_react(),
+    htmltools::includeScript(
+      "inst/app/js/formProcessing.js"
+    )
+  ) |>
+  attachAppDependencies() |>
+  app$update()
 ```
 

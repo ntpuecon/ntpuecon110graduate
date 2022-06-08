@@ -8,21 +8,24 @@ sheet = "進修4年級")
 
 c(
   dayStudents$生日,
-  nightStudents$生日 ) |>
-  stringr::str_extract("^[^/]+") |> unique() -> .years
-as.integer(.years |> stringr::str_remove("^\\s0")) + 1911 -> .wyears
-.patterns = stringr::str_glue("^({.years})")
-.patterns
-.replacement = as.character(.wyears)
-names(.replacement)=.patterns
-.replacement
+  nightStudents$生日 ) -> bDays
+bDays |>
+  stringr::str_extract("[^\\s0/]{2}") |> unique() -> .years
+
+# head(bDays) |>
+#   stringr::str_view_all("[^\\s0/]{2}")
+as.integer(.years) + 1911 -> .wyears
+
+replacement=as.character(.wyears)
+names(replacement) = paste0("\\s0",.years)
+replacement
+bDays |>
+  stringr::str_replace_all(
+     replacement
+  ) |> lubridate::ymd() -> westernBday
 
 data.frame(
-  bday=c(
-    dayStudents$生日,
-    nightStudents$生日 ) |>
-    stringr::str_replace_all(.replacement) |>
-    lubridate::ymd()
+  bday=westernBday
 ) -> df_validation
 
 df_validation$Id= c(dayStudents$學號, nightStudents$學號)
