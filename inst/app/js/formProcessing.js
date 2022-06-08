@@ -57,7 +57,9 @@ get_validate_data = function(success){
 }
 content_paragraph = function(content){
   let result='';
-  content.split("\n").forEach(
+  let ct = content.replace(/\n+/,"\n");
+  //ct.split("\n").forEach(
+  /\n+/[Symbol.split](ct).forEach(
     function(p){
     console.log(p);
       result+='<p class="flow-text">'+p+'</p>';
