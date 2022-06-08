@@ -1,4 +1,30 @@
-refresh_carousel = function(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="/" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="lib/app-1.0/css/style.css" rel="stylesheet" />
+<link href="lib/app-1.0/css/card.css" rel="stylesheet" />
+<link href="lib/app-1.0/css/control.css" rel="stylesheet" />
+<link href="lib/app-1.0/css/controlpanel.css" rel="stylesheet" />
+<script src="lib/app-1.0/js/appScript.js"></script>
+<script src="lib/app-1.0/js/materialiseinit.js"></script>
+<script src="lib/app-1.0/js/script.js"></script>
+<script src="lib/app-1.0/js/picker.date.js"></script>
+<script src="lib/app-1.0/js/picker.js"></script>
+<script src="lib/app-1.0/js/form.js"></script>
+<script src="lib/app-1.0/js/formProcessing.js"></script>
+
+</head>
+<body>
+<div class="carousel" id="greetingGallery"></div>
+<script>refresh_carousel = function(){
   get_gs_data(function(e){
     $("#greetingGallery").empty();
     gsData=e;
@@ -118,4 +144,6 @@ $(function(){
   // as key, his/her submission as array value whose last entry should be the latest.
   //get_gs_data(obtain_validGsData);
   //valid_gsData=obtain_validGsData();
-})
+})</script>
+</body>
+</html>
