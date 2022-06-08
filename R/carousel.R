@@ -2,21 +2,26 @@ carousel = function(...){
   require(htmltools)
   arglist = list(...)
   arglist |> purrr::map(carouselItem) -> carouselItems
-  tags$div(class = "carousel",
-    carouselItems) |>
+  tags$div(class = "carousel", id="greetingGallery",
+    carouselItems
+    # carouselHiddenItems(10)
+    ) |>
+  attachAppDependencies() |>
     tagList(
-  #     tags$script("document.addEventListener('DOMContentLoaded', function() {
-  #   var elemsCarousel = document.querySelectorAll('.carousel');
-  #   var instCarousel = M.Carousel.init(elemsCarousel, {
-  #     // specify options here
-  #   });
-  # });")
-    ) |> attachAppDependencies()
+      # tags$style("
+      #   .hide {display:none;}"),
+      html_dependency_react()
+    )
 }
 carouselItem = function(..., href="#"){
   tags$a(class = "carousel-item",
     href = href,
     ...)
+}
+carouselHiddenItems = function(n){
+  purrr::map(1:n,
+    ~{tags$a(class = "carousel-item hide")}
+    )
 }
 carouselExample = function(){
   carousel(

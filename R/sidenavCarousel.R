@@ -57,13 +57,15 @@ carouselPage = function(){
         style="display:none;",
         class="globe-container2",
         plot_capitalTrees()
-      )#,
-    # sidenav(
-    #   tags$li(
-    #        globeControl()
-    #       ))
-    ) |> tagList(sidenavCarouselDep()) |>
-    attachAppDependencies()
+      ),
+    sidenav(
+      tags$li(
+           tags$a(
+             href="form.html","填寫祝福",
+             tags$i(class="material-icons", "volunteer_activism")
+          ))
+    ))  |>
+    attachAppDependencies()|> tagList(sidenavCarouselDep(), reactR::html_dependency_react())
 }
 globeControl = function() {
   div(

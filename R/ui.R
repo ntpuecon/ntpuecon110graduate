@@ -113,7 +113,7 @@ card = function(content, title="Card Title"){
         tags$div(class = "card",
           tags$div(class = "card-content white-text",
             tags$a(
-              class="right", href="globe.html",
+              class="right", href="greeting.html",
               tags$i(class="material-icons close", 'close')
             ),
             tags$span(class = "card-title",
@@ -127,7 +127,7 @@ card = function(content, title="Card Title"){
               {tags$a(class = "waves-effect waves-light btn purple",
                 id="success",
                 style="display:none;",
-                href="globe.html",
+                href="greeting.html",
                 tags$i(class = "material-icons right",
                   "public"),
                 "返回地球")},
