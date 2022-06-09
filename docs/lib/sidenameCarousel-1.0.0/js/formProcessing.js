@@ -130,6 +130,8 @@ update_postData();
 
 
 };
+
+
 $(function(){
   refresh_carousel();
   get_capitals_data(dblclickGetTree);
