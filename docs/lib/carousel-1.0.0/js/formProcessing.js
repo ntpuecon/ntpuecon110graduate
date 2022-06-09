@@ -3,7 +3,7 @@ refresh_carousel = function(){
     $("#greetingGallery").empty();
     gsData=e;
     // compute valid gsData.values row numbers: seq_alongData
-    whichDataStop=gsData.values.findIndex(function(e){return e.length!=9})
+    whichDataStop=gsData.values.findIndex(function(e){return e[5]===''}); //.length!=9})
     seq_alongData = Array(whichDataStop-1).fill().map((e,i) => i+1);
     split_gsData = {};
     seq_alongData.map(
@@ -34,7 +34,7 @@ obtain_validGsData = function(gsData){
   //return splitData;
 }
 get_gs_data = function(success){
-  $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/Unique_Posts!A%3AI?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", success);
+  $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/Unique_Posts!A%3AJ?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", success);
 }
 
 get_validate_gsData = function(gsData){

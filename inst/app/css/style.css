@@ -58,6 +58,9 @@ opacity: 0.5;
   scrollbar-width: none;  /* Firefox */
 
 }
+.move-back {
+  z-index: -1 !important;
+}
 nav {
   background-color: transparent !important;
 -webkit-box-shadow:none !important;

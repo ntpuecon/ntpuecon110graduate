@@ -9,6 +9,7 @@ sidenav = function(..., icon="menu"){
     tags$a(href = "#",
       `data-target` = "slide-out",
       class = "sidenav-trigger",
+     # style = "display: contents !important;",
       tags$i(class = "material-icons",
         icon))
   ) -> tag_element

@@ -1,8 +1,9 @@
 $(function(){
 
-   $("#switchGlobe").click(function(){
-  console.log("switch")
-  $("#globeplace").toggleClass("back");
+  // $("#switchPosition").toggleClass("move-back");
+   $("#switchPosition").click(function(){
+     $(".globe-outercontainer").toggleClass("move-back");
+   });
 /*
   $("#sidenav-play").click(function(){
     tintId=setInterval(function(){greetingGallery.next()},2000);
@@ -28,7 +29,7 @@ $(function(){
 
 
 
-})
+
 
 
 $("#zoom-in").click(zoomIn);

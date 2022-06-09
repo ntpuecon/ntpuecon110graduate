@@ -22,12 +22,6 @@ ele.addEventListener('touchstart', function(e) {
 ```
 
 
-```{r}
-plot_capitalTrees() |> 
-  app$update()
-  econIDV::showWidget()
-  econIDV::get_traceInfo() |> View()
-```
 
 
 ```{r}
@@ -43,11 +37,6 @@ carouselPage() |>
   # econWeb::browseTag2()
 ```
 
-```{js}
-currentCountry = 
-$("#greetingGallery > .carousel-item.active")[0].ariaLabel
-console.log(currentCountry)
-```
 
 
 ```{r}
@@ -107,86 +96,9 @@ function isGlobeOverlapWish(){
 }
 ```
 
-```{r}
-
-list(
-    projection = list(
-      type ='orthographic',#   'natural earth',
-      rotation = list(
-        lon=0,
-        lat=0,
-        roll=0
-      )
-    ),
-    showland = TRUE,
-    showocean= TRUE,
-    oceancolor="#e3f2fd",
-    bgcolor= "#00000000",
-    landcolor = "#fff8e1"
-  ) |> jsonlite::toJSON() |>
-  clipr::write_clip()
-```
-
-```{js}
-$("#sidenav-play").click(function(){
-  tintId=setInterval(function(){greetingGallery.next()},2000);
-  $("#sidenav-play").toggle();
-  $("#sidenav-stop").toggle();
-})
-$("#sidenav-stop").click(function(){
-  clearInterval(tintId);
-  $("#sidenav-play").toggle();
-  $("#sidenav-stop").toggle();
-})
-```
-
-```{r}
-fig |> 
-  plotly::style(
-  
-      opacity=0.3
-    
-  )
-```
 
 
 
-```{js}
-sizeRange=[150, 200, 230, 264, 300, 320, 350];
-currentSize=3;
-zoomIn = function(){
-  if(currentSize >= 6) return;
-  currentSize +=1;
-  resize_globe(sizeRange[currentSize]);
-}
-zoomOut = function(){
-  if(currentSize<=0) return;
-  currentSize -=1;
-  resize_globe(sizeRange[currentSize]);
-}
-resize_globe = function(size){
-  //$("#globeplace").toggle();
-//setTimeout(function(){
-$("#globeplace").width(size+50);
-  $("#globeplace").height(size+50);
-  Plotly.relayout(
-  widget, 
-  {width: size, height: size });
 
-  setTimeout(
-  function(){
-  Plotly.relayout(
-  widget,{geo: {projection: {type: "orthographic"},
-  showland: true, showocean: true, oceancolor: "#e3f2fd", bgcolor:"#00000000", landcolor:"#fff8e1"}}
-)
-}, 200
-)
-//$("#globeplace").toggle();
-  
-}
 
-$("#zoom-in").click(zoomIn);
-$("#zoom-out").click(zoomOut);
-
-```
 

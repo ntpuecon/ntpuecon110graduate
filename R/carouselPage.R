@@ -57,6 +57,8 @@ zoomControl= function(){
       class="zoombtn", id="zoom-out",
       tags$i(class="material-icons", "remove")
     ),
+    div(class='zoombtn', id="switchPosition",
+      tags$i(class="material-icons", "move_up")),
     div(
       class="zoombtn", id="zoom-in",
       tags$i(class="material-icons", "add")
