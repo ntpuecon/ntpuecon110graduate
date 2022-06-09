@@ -46,6 +46,69 @@ tag_carousel() |>
     )
   ) |>
   attachAppDependencies() |>
+  save_html(
+    "docs/carousel.html"
+  )
   app$update()
+```
+
+## joinIcon
+
+```{r}
+update_joinIcon = function(){
+  fig=econWeb::Fig()
+  fig$export("inst/app/css/joinIcon")
+}
+tag_joinIcon <-function(){
+ tags$div(class = "joinIcons",
+ tags$div(class = "joinIcons-carousel",
+   tags$div(class = "joinIcons-carousel-iconCarousel")),
+ tags$div(class = "joinIcons-globe"))
+}
+joinIcon_dependency <- function(){
+htmltools::htmlDependency(
+  name="ntpuecon110graduate",
+  version="1.0.0",
+  src=c(file=system.file("/app/css",  package = "ntpuecon110graduate")),
+  style="joinIcon.css",
+  all_files = F
+)}
+ui_joinIcon <- function(dependency=NULL){
+  tagList(tag_joinIcon(), joinIcon_dependency(), appImgDep(), dependency)
+}
+ui_joinIcon() |> econWeb::browseTag2()
+```
+
+```{js}
+$("#switchGlobe").click(function(){
+  console.log("switch")
+  $("#globeplace").toggleClass("back");
+})
+
+```
+
+```{r}
+floating_control = function(){
+  tagList(
+tags$style('
+
+'),
+tags$div(class = "fixed-action-btn",
+ tags$a(class = "btn-floating btn-large red",
+   tags$i(class = "large material-icons",
+     "settings")),
+ tags$ul(tags$li(btn_globe_carousel_switch())))) -> tag_element
+
+tag_element |> attachDependencies(
+  list(jqueryDep(), materialiseDep(), googleDep())
+) |> 
+  tagList(
+    tags$script("document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+")
+  )
+}
 ```
 

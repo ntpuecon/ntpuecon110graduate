@@ -26,6 +26,7 @@ opacity: 0.5;
 
 .elegant-scroll {
 
+  width: 100%;
 /* Hide scrollbar for IE, Edge and Firefox */
 
   -ms-overflow-style: none;  /* IE and Edge */

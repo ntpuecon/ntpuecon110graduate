@@ -42,31 +42,6 @@ settingBtn = function(){
         "settings"))
   )
 }
-carouselPage = function(){
-  require(htmltools)
-  tagList(
-    div(style="position:absolute; bottom: 5%; right: 5%",
-    settingBtn()),
-    div(style="position:absolute; bottom: 5%; right: 45%; display:none;z-index:2;", id="controlContainer",
-      globeControl()),
-    tags$main(
-    carouselExample()),
-
-      div(
-        id="globeplace",
-        style="display:none;",
-        class="globe-container2",
-        plot_capitalTrees()
-      ),
-    sidenav(
-      tags$li(
-           tags$a(
-             href="form.html","填寫祝福",
-             tags$i(class="material-icons", "volunteer_activism")
-          ))
-    ))  |>
-    attachAppDependencies()|> tagList(sidenavCarouselDep(), reactR::html_dependency_react())
-}
 globeControl = function() {
   div(
     div(

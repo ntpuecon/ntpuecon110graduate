@@ -54,6 +54,17 @@ page_globeCard = function(){
       "temp/globe.html"
     )
 }
+page_wish = function(){
+  carouselPage() |>
+    htmltools::save_html(
+      "docs/wish.html"
+    )
+  carouselPage() |>
+    htmltools::save_html(
+      "temp/wish.html"
+    )
+  carouselPage()
+}
 page_form = function(){
   greetingForm() |>
     htmltools::save_html(
