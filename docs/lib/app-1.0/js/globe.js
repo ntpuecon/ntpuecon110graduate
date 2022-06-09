@@ -1,6 +1,6 @@
 $(function(){
-   $("#zoom-in").click(animateZoom);
-  $("#zoom-out").click(animateZoomBack);
+ //  $("#zoom-in").click(animateZoom);
+//  $("#zoom-out").click(animateZoomBack);
   $play=$("#play");
   $stop=$("#stop");
   $play.click(
@@ -106,7 +106,8 @@ targetTree = function(lat, lon){
   )
 }
 
-goption =
+//goption =
+/*
 currentScale=1;
 zoomIn = function(){
   currentScale=currentScale+1;
@@ -142,7 +143,7 @@ animateZoomBack = function(ms=3500){
     }
   })
 }
-
+*/
 resetPlayLat = function(){
   let ly=get_layout_center_geo();
   ly.geo_projection.rotation.lat = lyStart.geo_projection.rotation.lat;

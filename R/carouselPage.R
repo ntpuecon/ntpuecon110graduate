@@ -8,7 +8,7 @@ carouselPage = function(){
     tags$main(
       carousel()),
     div(
-      class="row", style="
+      class="globe-outercontainer", style="
     position: absolute;
     bottom: 10%;
     left: 10%;",

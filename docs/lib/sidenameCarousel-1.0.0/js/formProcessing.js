@@ -73,7 +73,18 @@ dblclickGetTree = function(capitals){
     lat=capitalDict[countryName][2];
     lon=capitalDict[countryName][3];
     targetTree(lat, lon);
+    dimOtherTreesBut();
   })
+}
+dimOtherTreesBut = function(){
+  Plotly.update(widget, {opacity:.3}, {opacity:.3},[1,2,3]);
+  setTimeout(function(){
+  Plotly.restyle(widget, {opacity:1}, [1,2,3]).then(
+    function(){
+      Plotly.relayout(widget,
+      {opacity:1});
+    })
+  },2000);
 }
 content_paragraph = function(content){
   let result='';

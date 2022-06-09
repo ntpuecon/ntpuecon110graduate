@@ -138,15 +138,15 @@ get_layout_g = function(){
 
 ```
 
-```{js}
-
-
-```
-
-
 ```{r}
-
+fig |> 
+  plotly::style(
+  
+      opacity=0.3
+    
+  )
 ```
+
 
 
 ```{js}
