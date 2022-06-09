@@ -15,6 +15,8 @@ refresh_carousel = function(){
          M.Carousel.init($("#greetingGallery"));
          greetingGallery = M.Carousel.getInstance($("#greetingGallery"));
       });
+
+      showCurrentTrees();
     });
 }
 var splitData={}

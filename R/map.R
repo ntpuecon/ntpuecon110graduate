@@ -57,6 +57,13 @@ globe <- function(lat= 24.9442979, lon=121.370319, roll=0) {
   fig <- fig %>% layout(geo = g)
   fig
 }
+update_capitalsData = function(){
+googlesheets4::read_sheet(
+  ss="https://docs.google.com/spreadsheets/d/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/edit#gid=1529622625",
+  sheet="Capitals"
+) -> capitals
+ usethis::use_data(capitals, overwrite = T)
+}
 plot_capitalTrees = function(){
   library(plotly)
 

@@ -10,6 +10,9 @@ $(function(){
   $inputId=$("#inputId");
   $inputBday=$("#inputBday");
   $inputWords=$("#inputWords");
+
+  clearTrees();
+
 });
 
 data = {}

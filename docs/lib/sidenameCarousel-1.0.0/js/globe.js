@@ -74,6 +74,12 @@ var plantTree = {
    visible: true
 }
 treesPlanted = 1;
+showCurrentTrees = function(){
+totalTraces=Object.keys(split_gsData).length;
+traces=Array(totalTraces).fill().map((e,i)=> i);
+Plotly.restyle(widget, plantTree,traces)
+}
+
 plantOneMoreTree = function(){
   Plotly.restyle(widget, plantTree, treesPlanted)
   treesPlanted = treesPlanted+1
@@ -100,6 +106,7 @@ targetTree = function(lat, lon){
   )
 }
 
+goption =
 currentScale=1;
 zoomIn = function(){
   currentScale=currentScale+1;

@@ -13,9 +13,7 @@ form {
       .globe-container2 {
 
 
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
+
     z-index: 1;
 
         /* Auto layout */

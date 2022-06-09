@@ -2,6 +2,26 @@ html,
 body {
     overscroll-behavior-y: contain;
 }
+.zoomcontrol {
+  /* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-end;
+padding: 0px;
+gap: 65px;
+
+position: absolute;
+width: 125px;
+height: 30px;
+    bottom: -50px;
+    left: calc(50% - 125px/2);
+}
+.zoombtn {
+  flex: none;
+  flex-grow: 0
+}
 .globe-container {
   position: absolute;
 width: 165px;
@@ -73,8 +93,14 @@ opacity: 0.5;
 #warning {
   display: none;
 }
+.plot-container.plotly{
+  position: absolute;
+  bottom: 0px;
+}
 .fixed-action-btn {
   position: absolute !important;
+  right: -25% !important;
+  bottom: -10% !important;
 }
 .page-footer, .footer-copyright {
   background-color: white;
