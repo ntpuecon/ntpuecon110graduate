@@ -87,28 +87,23 @@ $("#switchGlobe").click(function(){
 
 ```
 
-```{r}
-floating_control = function(){
-  tagList(
-tags$style('
 
-'),
-tags$div(class = "fixed-action-btn",
- tags$a(class = "btn-floating btn-large red",
-   tags$i(class = "large material-icons",
-     "settings")),
- tags$ul(tags$li(btn_globe_carousel_switch())))) -> tag_element
+```{js}
+function elementsOverlap(el1, el2) {
+  const domRect1 = el1.getBoundingClientRect();
+  const domRect2 = el2.getBoundingClientRect();
 
-tag_element |> attachDependencies(
-  list(jqueryDep(), materialiseDep(), googleDep())
-) |> 
-  tagList(
-    tags$script("document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems);
-  });
-")
-  )
+  return !(
+    domRect1.top > domRect2.bottom ||
+    domRect1.right < domRect2.left ||
+    domRect1.bottom < domRect2.top ||
+    domRect1.left > domRect2.right
+  );
+}
+function isGlobeOverlapWish(){
+  let result = elementsOverlap($("#greetingGallery")[0],$("#globeplace")[0])
+  console.log(result);
+  return result;
 }
 ```
 
