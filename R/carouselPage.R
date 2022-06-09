@@ -15,5 +15,5 @@ carouselPage = function(){
       class="globe-container2",
       plot_capitalTrees()
     ))  |>
-    attachAppDependencies()|> tagList(sidenavCarouselDep(), reactR::html_dependency_react())
+    attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep())
 }
