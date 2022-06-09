@@ -69,6 +69,16 @@ btn_globe_carousel_switch = function(color='red', id="switchGlobe"){
       materialiseDep()
     )
 }
+btn_slideshow = function(color='red', href="form.html"){
+  tags$a(
+    href=href,
+    class=glue::glue("btn-floating btn-large waves-effect waves-light {color}"),
+    tags$i(class="material-icons", "slideshow")
+  )   |>
+    tagList(
+      materialiseDep(), googleDep()
+    )
+}
 btn_fillwishform = function(color='red', href="form.html"){
 
     tags$a(

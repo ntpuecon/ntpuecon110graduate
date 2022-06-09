@@ -3,6 +3,31 @@ $(function(){
    $("#switchGlobe").click(function(){
   console.log("switch")
   $("#globeplace").toggleClass("back");
+/*
+  $("#sidenav-play").click(function(){
+    tintId=setInterval(function(){greetingGallery.next()},2000);
+  })
+  $("#sidenav-play").click(function(){
+      $("#sidenav-play").toggle();
+      $("#sidenav-stop").toggle();
+    });
+  $("#sidenav-stop").click(function(){
+   // clearInterval(tintId);
+    $("#sidenav-play").toggle();
+    $("#sidenav-stop").toggle();
+  });*/
+  /*
+  $("#sidenav-play").click(function(){
+      $("#sidenav-play").toggle();
+      $("#sidenav-stop").toggle();
+    })
+   $("#sidenav-stop").click(function(){
+    $("#sidenav-play").toggle();
+    $("#sidenav-stop").toggle();
+  })*/
+
+
+
 })
 
 

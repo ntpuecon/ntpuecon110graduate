@@ -1,7 +1,7 @@
 $(function(){
  //  $("#zoom-in").click(animateZoom);
 //  $("#zoom-out").click(animateZoomBack);
-  $play=$("#play");
+/*  $play=$("#play");
   $stop=$("#stop");
   $play.click(
     function(){
@@ -12,7 +12,7 @@ $(function(){
     $stop.toggle();
     $play.toggle();
     stopRotation()});
-    lyStart=get_layout_center_geo();
+    lyStart=get_layout_center_geo(); */
 });
 
 function rotate_globe(right=2){

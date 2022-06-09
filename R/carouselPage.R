@@ -1,8 +1,32 @@
 carouselPage = function(){
   require(htmltools)
   require(reactR)
+  color="purple lighten-4"
   tagList(
+    tags$nav(
+    sidenav(
+      tags$li(
+        tags$a(
+          id="sidenav-play",
 
+        # href=href,
+        class=glue::glue("btn-large waves-effect waves-light {color}"),
+        tags$i(class="material-icons", "slideshow")
+      )),
+      tags$li(
+        tags$a(
+          id="sidenav-stop", style="display:none;",
+        # href=href,
+        class=glue::glue("btn-large waves-effect waves-light {color}"),
+        tags$i(class="material-icons", "stop")
+      )),
+      tags$li(tags$a(
+        href="form.html",
+        class=glue::glue("btn-large waves-effect waves-light {color}"),
+        tags$i(class="material-icons", "volunteer_activism")
+      )),
+      icon="menu-open"
+    )),
     # div(style="position:absolute; bottom: 5%; right: 45%; z-index:2;display:none;", id="controlContainer",
     #   globeControl()),
     tags$main(
@@ -20,8 +44,9 @@ carouselPage = function(){
       zoomControl())
       # div(style="position:absolute; bottom: 5%; right: 5%",
       #   )
-    ),
-    floating_control())  |>
+    )#,
+    # floating_control()
+    )  |>
     attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep(), globeDep())
 }
 zoomControl= function(){

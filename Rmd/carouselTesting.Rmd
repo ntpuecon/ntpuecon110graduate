@@ -128,14 +128,16 @@ list(
 ```
 
 ```{js}
-lat= 24.9442979;
-lon=121.370319
-get_layout_g = function(){
- return {"projection":{
- "type":["orthographic"],"rotation":{"lon":lon,"lat":lat,"roll":[0]}},"showland":[true],"showocean":[true],"oceancolor":["#e3f2fd"],"bgcolor":["#00000000"],"landcolor":["#fff8e1"]}
-}
-
-
+$("#sidenav-play").click(function(){
+  tintId=setInterval(function(){greetingGallery.next()},2000);
+  $("#sidenav-play").toggle();
+  $("#sidenav-stop").toggle();
+})
+$("#sidenav-stop").click(function(){
+  clearInterval(tintId);
+  $("#sidenav-play").toggle();
+  $("#sidenav-stop").toggle();
+})
 ```
 
 ```{r}

@@ -1,4 +1,4 @@
-sidenav = function(...){
+sidenav = function(..., icon="menu"){
   tagList(
     tags$style('
 
@@ -10,11 +10,32 @@ sidenav = function(...){
       `data-target` = "slide-out",
       class = "sidenav-trigger",
       tags$i(class = "material-icons",
-        "menu"))
+        icon))
   ) -> tag_element
 
   tag_element |> attachAppDependencies() |> tagList(
-    carouselPageDep()
+    carouselPageDep(),
+    tags$script('$(function(){
+      $("#sidenav-play").click(function(){
+      tintId=setInterval(function(){greetingGallery.next()},2000);
+      $("#sidenav-play").toggle();
+      $("#sidenav-stop").toggle();
+    });
+  $("#sidenav-stop").click(function(){
+    clearInterval(tintId);
+    tintId=null;
+    $("#sidenav-play").toggle();
+    $("#sidenav-stop").toggle();
+  });
+  $(".carousel").click(function(){
+  if(tintId!=null){
+  clearInterval(tintId);
+    tintId=null;
+    $("#sidenav-play").toggle();
+    $("#sidenav-stop").toggle();
+  }
+  })
+    })')
   )
 
 }
