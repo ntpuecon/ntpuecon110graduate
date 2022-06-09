@@ -64,7 +64,8 @@ get_validate_data = function(success){
   $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/ValidInput!C%3AC?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", success);
 }
 dblclickGetTree = function(capitals){
-  capitalsDictionary(capitals);
+  capitalsData = capitals;
+  capitalsDictionary(capitalsData);
   $(".carousel").dblclick(function(){
     countryName = $(".carousel-item.active")[0].ariaLabel;
     lat=capitalDict[countryName][2];
@@ -129,6 +130,8 @@ update_postData();
 
 
 };
+
+
 $(function(){
   refresh_carousel();
   get_capitals_data(dblclickGetTree);

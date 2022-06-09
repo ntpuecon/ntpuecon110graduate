@@ -23,7 +23,7 @@ carouselHiddenItems = function(n){
     ~{tags$a(class = "carousel-item hide")}
     )
 }
-carouselExample = function(){
+carouselExample_deprecated = function(){
   carousel(
     greeting_card2(),
     tags$img(src="https://materializecss.github.io/materialize/images/placeholder/250x250_a.png"),

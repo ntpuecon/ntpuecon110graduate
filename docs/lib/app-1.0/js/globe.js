@@ -81,6 +81,11 @@ plantOneMoreTree = function(){
 targetTree = function(lat, lon){
   Plotly.relayout(widget,
     {geo: {
+        showland: true,
+        showocean: true,
+        oceancolor: "#e3f2fd",
+        bgcolor: "#00000000",
+        landcolor: "#fff8e1",
         center: {
         lat: lat,
         lon: lon},
@@ -94,6 +99,7 @@ targetTree = function(lat, lon){
       }
   )
 }
+
 currentScale=1;
 zoomIn = function(){
   currentScale=currentScale+1;
