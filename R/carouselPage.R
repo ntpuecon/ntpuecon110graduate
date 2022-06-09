@@ -15,5 +15,5 @@ carouselPage = function(){
       class="globe-container2",
       plot_capitalTrees()
     ))  |>
-    attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep())
+    attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep(), globeDep())
 }

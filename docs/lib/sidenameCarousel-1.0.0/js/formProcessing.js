@@ -42,11 +42,19 @@ reduce_validate_gsData = function(){
   valid_gsData=get_validate_gsData();
 
 }
-get_capitals_data = function(){
-  $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/Capitals!A%3AD?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", function( data ) {
-    capitals =data;
-  console.log( data );
-});
+get_capitals_data = function(success){
+  $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/Capitals!A%3AD?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", success);
+}
+seq_along = function(a){
+  return Array(a.length).fill().map((e,i)=>i);
+}
+capitalDict={}
+capitalsDictionary = function(capitals){
+  seq_along(capitals.values).map(
+    function(x){
+      capitalDict[capitals.values[x][0]]=capitals.values[x]
+    }
+  )
 }
 processValidate_data=function(validates){
   valid_flat=validates.values.flat();
@@ -54,6 +62,15 @@ processValidate_data=function(validates){
 }
 get_validate_data = function(success){
   $.get( "https://sheets.googleapis.com/v4/spreadsheets/1AE7_zIHORciJF3QmFaQrWeq4c9gmhzyycOYO1FblRbk/values/ValidInput!C%3AC?key=AIzaSyCS5NWgJamT12ABAhNpXjYEnD7Zy3sg9n0", success);
+}
+dblclickGetTree = function(capitals){
+  capitalsDictionary(capitals);
+  $(".carousel").dblclick(function(){
+    countryName = $(".carousel-item.active")[0].ariaLabel;
+    lat=capitalDict[countryName][2];
+    lon=capitalDict[countryName][3];
+    targetTree(lat, lon);
+  })
 }
 content_paragraph = function(content){
   let result='';
@@ -114,6 +131,7 @@ update_postData();
 };
 $(function(){
   refresh_carousel();
+  get_capitals_data(dblclickGetTree);
   //obtain valid_gsDat as an object with studentId
   // as key, his/her submission as array value whose last entry should be the latest.
   //get_gs_data(obtain_validGsData);
