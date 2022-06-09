@@ -5,8 +5,8 @@ update_joinIcon = function(){
 tag_joinIcon <-function(color){
   tags$div(class = "joinIcons",
     tags$div(class = "joinIcons-carousel",
-      tags$div(class = "joinIcons-carousel-iconCarousel")),
-    tags$div(class = glue::glue("joinIcons-globe {color}")))
+      tags$div(class = "joinIcons-carousel-iconCarousel", type="background: no-repeat center url(lib/appImg-1.0.0/icon-carousel.svg);")),
+    tags$div(class = glue::glue("joinIcons-globe {color}", style="background: no-repeat center url(lib/appImg-1.0.0/icon-globe.svg);")))
 }
 joinIcon_dependency <- function(){
   htmltools::htmlDependency(
