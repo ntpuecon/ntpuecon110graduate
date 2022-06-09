@@ -17,11 +17,11 @@ carouselPage = function(){
       # style="display:none;",
       class="globe-container2",
       plot_capitalTrees(),
-      zoomControl(),
-      floating_control())
+      zoomControl())
       # div(style="position:absolute; bottom: 5%; right: 5%",
       #   )
-    ))  |>
+    ),
+    floating_control())  |>
     attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep(), globeDep())
 }
 zoomControl= function(){

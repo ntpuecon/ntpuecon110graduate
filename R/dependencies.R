@@ -18,6 +18,10 @@ appDep = function(page=c("form", "globe", "greeting")){
     }
   )
 }
+touchSwipeDep = function(){
+  htmltools::htmlDependency(name = "app", version = "1.0",
+    src = c(file = normalizePath("./inst/app")), script = c("js/jquery.touchSwipe.min.js"))
+}
 globeDep = function(){
   htmltools::htmlDependency(name = "globe", version = "1.0",
     src = c(file = normalizePath("./inst/app")), script = c("js/globe.js"))

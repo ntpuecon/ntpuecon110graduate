@@ -99,8 +99,8 @@ opacity: 0.5;
 }
 .fixed-action-btn {
   position: absolute !important;
-  right: -25% !important;
-  bottom: -10% !important;
+  right: 0% !important;
+  bottom: 10% !important;
 }
 .page-footer, .footer-copyright {
   background-color: white;
