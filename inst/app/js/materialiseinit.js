@@ -5,9 +5,9 @@ var elemsSidenav = document.querySelectorAll('.sidenav');
       // specify options here
     });
     var elemsCarousel = document.querySelectorAll('.carousel');
-    instCarousel = M.Carousel.init(elemsCarousel, {
+    /*instCarousel = M.Carousel.init(elemsCarousel, {
       // specify options here
-    });
+    }); */
   // pick Date
   option1 = {defaultDate: new Date(2000, 1, 1)};
 option1.setDefaultDate = new Date(2000, 1, 1);

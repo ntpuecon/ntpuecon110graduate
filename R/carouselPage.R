@@ -6,7 +6,7 @@ carouselPage = function(){
     # carouselGlobeNav(),
     # div(style="position:absolute; bottom: 5%; right: 45%; z-index:2;display:none;", id="controlContainer",
     #   globeControl()),
-    tags$main(
+    # tags$main(
       carousel(),
     div(
       class="globe-outercontainer", style="
@@ -18,7 +18,7 @@ carouselPage = function(){
       # style="display:none;",
       class="globe-container2",
       plot_capitalTrees()
-      ))),
+      )),
     tags$div(class="page-footer",
       zoomControl())
     #,

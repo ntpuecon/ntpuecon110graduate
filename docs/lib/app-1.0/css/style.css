@@ -13,10 +13,10 @@ flex-direction: row;
 justify-content: space-between;
 align-items: flex-end;
 padding: 0px;
-gap: 65px;
+gap: 40px;
 
 position: absolute;
-width: 125px;
+/*width: 125px;*/
 height: 30px;
     bottom: -50px;
     left: calc(50% - 125px/2);
@@ -97,7 +97,7 @@ box-shadow:none !important;}
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
 /*    .carousel {height:535px;}*/
     .carousel .carousel-item {width:250px !important;}
-      .carousel .carousel-item {margin-top: -60px;}
+      .carousel .carousel-item {margin-top: -125px;}
 .card {
 /* position: fixed !important; */
 }
@@ -126,7 +126,7 @@ box-shadow:none !important;}
 }
 .page-footer {
   position:absolute !important;
-  bottom: 5%;
+  bottom: 9%;
   background: transparent !important;
 }
 .menu-title {
