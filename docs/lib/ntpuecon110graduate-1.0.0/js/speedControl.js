@@ -10,14 +10,14 @@ $(function(){
     $("#play_arrow").toggle();
     $("#stop").toggle();
   });
-  $(".carousel").click(function(){
+  /*$(".carousel").click(function(){
   if(tintId!=null){
   clearInterval(tintId);
     tintId=null;
     $("#play_arrow").toggle();
     $("#stop").toggle();
   }
-  });
+  }); */
 speedControlDown = function () {
     var div = $(".speedcontainer-speedadjustment");
 
