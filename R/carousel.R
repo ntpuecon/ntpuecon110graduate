@@ -3,6 +3,7 @@ carousel = function(...){
   arglist = list(...)
   arglist |> purrr::map(carouselItem) -> carouselItems
   tags$div(class = "carousel", id="greetingGallery",
+    style="overflow: inital !important;",
     carouselItems
     # carouselHiddenItems(10)
     ) |>
