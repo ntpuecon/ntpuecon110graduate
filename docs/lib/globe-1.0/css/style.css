@@ -69,7 +69,8 @@ nav {
 -webkit-box-shadow:none !important;
 box-shadow:none !important;}
 .carousel {
-  overflow: visible; position:absolute; top:0%;}
+  overflow: initial !important;
+  overflow-y: visible; position:absolute; top:0%;}
 .signature-img {
   background-size: contain;
 }
