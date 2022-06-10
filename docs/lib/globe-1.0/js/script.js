@@ -1,5 +1,18 @@
 $(function(){
-
+	// ---- this would be the plugin ----
+	// special event for non-preventDefault
+	jQuery.event.special.touchstart = {
+		setup: function( _, ns, handle ){
+			if ( ns.includes("noPreventDefault") ) {
+			  console.log("passive events");
+			  this.addEventListener("touchstart", handle, { passive: true });
+			} else {
+			  console.log("non-passive events");
+				return false;
+			}
+		}
+	};
+	// -----------------------------------
 
   $output_frame = $("#output_frame");
   $output_frame.on('DOMSubtreeModified', function(){

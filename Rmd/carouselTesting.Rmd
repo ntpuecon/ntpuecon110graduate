@@ -2,23 +2,11 @@
 # test globe
 
 ```{js}
-let lastClick = 0;
-const ele = document.querySelector('.carousel');
-ele.addEventListener('touchstart', function(e) {
-  e.preventDefault(); // to disable browser default zoom on double tap
-  let date = new Date();
-  let time = date.getTime();
-  const time_between_taps = 200; // 200ms
-  if (time - lastClick < time_between_taps) {
-    // do stuff
-    countryName = $(".carousel-item.active")[0].ariaLabel;
-    lat=capitalDict[countryName][2];
-    lon=capitalDict[countryName][3];
-    targetTree(lat, lon);
-    console.log("done");
-  }
-  lastClick = time;
-})
+seq_alongObject = function(obj){
+return Object.keys(obj);
+}
+
+
 ```
 
 

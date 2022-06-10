@@ -1,4 +1,10 @@
 $(function(){
+
+   widget.on("plotly_click", function(e){eda_click=e;
+   let globeTargetCountry= eda_click.points[0].data.name;
+   slide2target(globeTargetCountry);
+   console.log(e);});
+
  //  $("#zoom-in").click(animateZoom);
 //  $("#zoom-out").click(animateZoomBack);
 /*  $play=$("#play");
@@ -14,6 +20,12 @@ $(function(){
     stopRotation()});
     lyStart=get_layout_center_geo(); */
 });
+
+
+slide2target = function(input_globeTargetCountry){
+  targetSlidenumber= countriesExists.findIndex((e) => e==input_globeTargetCountry);
+  greetingGallery.set(targetSlidenumber);
+};
 
 function rotate_globe(right=2){
   currentLon=widget.layout.geo.projection.rotation.lon;

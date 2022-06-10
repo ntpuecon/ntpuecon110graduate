@@ -113,7 +113,8 @@ plot_capitalTrees = function(){
     plotly::config(
       displayModeBar=F
     ) |>
-    htmlwidgets::onRender("function(e){widget=e;}")
+    htmlwidgets::onRender("function(e){widget=e;
+      }")
   fig
 }
 globe_ratate = function(p=globe(), rotate=15){

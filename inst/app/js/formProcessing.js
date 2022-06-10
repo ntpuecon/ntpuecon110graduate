@@ -14,6 +14,9 @@ refresh_carousel = function(){
          $("#greetingGallery").append(greetingX);
          M.Carousel.init($("#greetingGallery"));
          greetingGallery = M.Carousel.getInstance($("#greetingGallery"));
+
+         countriesExists = Object.keys(split_gsData);
+         traces = seq_along(countriesExists);
       });
 
       showCurrentTrees();
@@ -73,18 +76,25 @@ dblclickGetTree = function(capitals){
     lat=capitalDict[countryName][2];
     lon=capitalDict[countryName][3];
     targetTree(lat, lon);
-    dimOtherTreesBut();
+    let dimtraces = traces2dim();
+    dimOtherTreesBut(dimtraces)
   })
 }
-dimOtherTreesBut = function(){
-  Plotly.update(widget, {opacity:.3}, {opacity:.3},[1,2,3]);
+dimOtherTreesBut = function(dimtraces){
+  Plotly.update(widget, {opacity:.3}, {opacity:.3},dimtraces);
   setTimeout(function(){
-  Plotly.restyle(widget, {opacity:1}, [1,2,3]).then(
+  Plotly.restyle(widget, {opacity:1}, dimtraces).then(
     function(){
       Plotly.relayout(widget,
       {opacity:1});
     })
   },2000);
+}
+traces2dim = function(){
+  targetTracenumber= countriesExists.findIndex((e) => e==countryName)
+  let dimTraces = traces.slice();
+  dimTraces.splice(targetTracenumber,1);
+  return dimTraces
 }
 content_paragraph = function(content){
   let result='';
@@ -148,6 +158,7 @@ update_postData();
 $(function(){
   refresh_carousel();
   get_capitals_data(dblclickGetTree);
+
   //obtain valid_gsDat as an object with studentId
   // as key, his/her submission as array value whose last entry should be the latest.
   //get_gs_data(obtain_validGsData);
