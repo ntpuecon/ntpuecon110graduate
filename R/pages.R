@@ -57,7 +57,7 @@ page_globeCard = function(){
 page_wish = function(){
   carouselPage() |>
     htmltools::save_html(
-      "docs/wish.html"
+      "inst/pwa/www/index.html"
     )
   carouselPage() |>
     htmltools::save_html(
