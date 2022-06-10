@@ -116,6 +116,12 @@ box-shadow:none !important;}
 }
 .page-footer, .footer-copyright {
   background-color: white;
+  color: black !important;
+}
+.page-footer {
+  position:absolute !important;
+  bottom: 5%;
+  background: transparent !important;
 }
 .menu-title {
   width: fit-content;

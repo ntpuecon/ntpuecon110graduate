@@ -9,6 +9,30 @@ return Object.keys(obj);
 
 ```
 
+```{js}
+$(function(){
+      $("#play_arrow").click(function(){
+      tintId=setInterval(function(){greetingGallery.next()},2000);
+      $("#play_arrow").toggle();
+      $("#stop").toggle();
+    });
+  $("#stop").click(function(){
+    clearInterval(tintId);
+    tintId=null;
+    $("#play_arrow").toggle();
+    $("#stop").toggle();
+  });
+  $(".carousel").click(function(){
+  if(tintId!=null){
+  clearInterval(tintId);
+    tintId=null;
+    $("#play_arrow").toggle();
+    $("#stop").toggle();
+  }
+  })
+    });
+
+```
 
 
 
