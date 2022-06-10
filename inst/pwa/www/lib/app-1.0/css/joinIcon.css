@@ -1,0 +1,14 @@
+.joinIcons{flex:none;order:0;flex-grow:0;width:33px;height:33px;}
+.joinIcons-carousel{position:absolute;width:26.76px;height:24.75px;left:17.74px;top:11.5px;}
+.joinIcons-carousel-iconCarousel{position:absolute;left:8.33%;right:8.33%;top:12.5%;bottom:12.5%;background:#F2F2F2;}
+.joinIcons-globe{position:absolute;width:24.97px;height:23.1px;left:11.5px;top:21.4px;
+  border-radius: 28px;
+}
+.back{z-index:-1 !important;}
+.globe-backgroundGlobe{position:absolute;left:20.54%;right:34.87%;top:38.21%;bottom:20.54%;background:#E7C3F4;border-radius:28px;}
+.globe-iconGlobe{position:absolute;left:21.81%;right:36.78%;top:39.69%;bottom:20.54%;}
+.Vector{position:absolute;left:21.81%;right:36.78%;top:39.69%;bottom:20.54%;border:2.5px solid #FFFFFF;}
+.Vector1{position:absolute;left:21.81%;right:36.78%;top:59.58%;bottom:40.42%;border:1.5px solid #FFFFFF;}
+.Vector2{position:absolute;left:34.23%;right:49.2%;top:39.69%;bottom:20.54%;border:1.5px solid #FFFFFF;}
+.Vector3{position:absolute;left:27.87%;right:42.85%;top:45.8%;bottom:48.38%;border:1.5px solid #FFFFFF;}
+.Vector4{position:absolute;left:27.87%;right:42.85%;top:67.53%;bottom:26.64%;border:1.5px solid #FFFFFF;}

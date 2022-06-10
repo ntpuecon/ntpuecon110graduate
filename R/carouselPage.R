@@ -24,7 +24,9 @@ carouselPage = function(){
     #,
     # floating_control()
     )  |>
-    attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep(), globeDep())
+    attachAppDependencies()|> tagList(sidenavCarouselDep(), carouselPageDep(), globeDep()) |>
+    add_pwa_deps() |>
+    add_pwacompat_deps()
 }
 carouselGlobeNav = function(){
   tags$nav(
