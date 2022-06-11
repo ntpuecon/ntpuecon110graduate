@@ -19,8 +19,14 @@ carouselPage = function(){
       class="globe-container2",
       plot_capitalTrees()
       )),
-    tags$div(class="page-footer",
-      zoomControl())
+    tags$div(class="page-footer footer-control",
+      zoomControl(),
+      div(class="wishBtnContainer", id="giveWish",
+        tags$a(
+          class="btn-floating waves-effect waves-light", style="color:#039be5",
+          href="form.html",
+          tags$i(class="material-icons","volunteer_activism")))
+      )
     #,
     # floating_control()
     )  |>
@@ -77,6 +83,7 @@ globeZoomControl= function(){
   ) |>
     attachAppDependencies()
 }
+
 zoomControl= function(){
   require(htmltools)
   div(
@@ -94,7 +101,10 @@ zoomControl= function(){
         style="display:none;",
         tags$i(class="material-icons", "stop")),
     div(class="speedControlInsidePanel",
-    ui_speedControl())
+    ui_speedControl())#,
+    # div(class="zoombtn", id="giveWish",
+    #   tags$a(href="form.html",
+    #     tags$i(class="material-icons","volunteer_activism")))
   ) |>
     attachAppDependencies()
 }

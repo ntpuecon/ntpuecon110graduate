@@ -7,7 +7,7 @@ generate_googleForm = function(.names=makenames()){
     postUrl=ntpuecon110graduate::webAppUrl
   )
 }
-form <- function(ids=generate_ids(), .names= NULL, postUrl= NULL){
+form <- function(ids=generate_ids(), .names= NULL, postUrl= NULL, href="index.html"){
   require(htmltools)
 
 
@@ -100,7 +100,7 @@ inProgress= function(hide=T){
 
   tag_element |> attachAppDependencies()
 }
-card = function(content, title="Card Title"){
+card = function(content, title="Card Title", href="index.html"){
   require(htmltools)
   tagList(
     tags$style("
@@ -113,7 +113,7 @@ card = function(content, title="Card Title"){
         tags$div(class = "card",
           tags$div(class = "card-content white-text",
             tags$a(
-              class="right", href="wish.html",
+              class="right", href=href,
               tags$i(class="material-icons close", 'close')
             ),
             tags$span(class = "card-title",
@@ -127,7 +127,7 @@ card = function(content, title="Card Title"){
               {tags$a(class = "waves-effect waves-light btn purple",
                 id="success",
                 style="display:none;",
-                href="wish.html",
+                href=href,
                 tags$i(class = "material-icons right",
                   "public"),
                 "返回地球")},
