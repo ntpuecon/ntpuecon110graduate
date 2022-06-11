@@ -14,7 +14,7 @@ carouselPage2 = function(){
           carousel2())),
         div(class="row",
           div(class="col s12 m3 offset-m3",
-            style="position:relative;height:300px;",
+            style="position:relative;height:0;",
             div(style="height:300px;overflow:overlay;",
               div(
                 class="globe-outercontainer", style="

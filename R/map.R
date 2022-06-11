@@ -97,7 +97,7 @@ plot_capitalTrees = function(){
     landcolor = "#fff8e1"
   )
   #plotly::plot_geo() |> plotly::layout(geo=g)
-  fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude, width="263", height="263")
+  fig <- plot_geo(capitals, lat = ~CapitalLatitude, lon = ~CapitalLongitude, width="150", height="150")
   fig <- fig |>
     add_text(
       text=~tree,
