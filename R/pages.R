@@ -69,6 +69,21 @@ page_wish = function(){
     )
   carouselPage()
 }
+page_wish2 = function(){
+  # carouselPage2() |>
+  #   htmltools::save_html(
+  #     "docs/index.html"
+  #   )
+  carouselPage2() |>
+    htmltools::save_html(
+      "docs/wish.html"
+    )
+  carouselPage2() |>
+    htmltools::save_html(
+      "temp/wish.html"
+    )
+  carouselPage()
+}
 page_form = function(){
   greetingForm() |>
     htmltools::save_html(

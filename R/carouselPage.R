@@ -6,19 +6,23 @@ carouselPage = function(){
     # carouselGlobeNav(),
     # div(style="position:absolute; bottom: 5%; right: 45%; z-index:2;display:none;", id="controlContainer",
     #   globeControl()),
-    # tags$main(
-      carousel(),
-    div(
-      class="globe-outercontainer", style="
+    tags$main(
+      div(class="row",
+        div(class="col s12 m6 offset-m3",
+          carousel(),
+          div(
+            class="globe-outercontainer", style="
     position: absolute;
     bottom: 10%;
     left: 10%;",
-    div(
-      id="globeplace",
-      # style="display:none;",
-      class="globe-container2",
-      plot_capitalTrees()
-      )),
+            div(
+              id="globeplace",
+              # style="display:none;",
+              class="globe-container2",
+              plot_capitalTrees()
+            ))
+          ))
+      ),
     tags$div(class="page-footer footer-control",
       zoomControl(),
       div(class="wishBtnContainer", id="giveWish",

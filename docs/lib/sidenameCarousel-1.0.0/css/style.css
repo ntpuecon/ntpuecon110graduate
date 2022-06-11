@@ -160,6 +160,7 @@ box-shadow:none !important;}
 .page-footer {
   position:absolute !important;
   background: transparent !important;
+  max-width: 400px;
 }
 .menu-title {
   width: fit-content;
