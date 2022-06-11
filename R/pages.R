@@ -82,7 +82,7 @@ page_wish2 = function(){
     htmltools::save_html(
       "temp/wish.html"
     )
-  carouselPage()
+  carouselPage2()
 }
 page_form = function(){
   greetingForm() |>

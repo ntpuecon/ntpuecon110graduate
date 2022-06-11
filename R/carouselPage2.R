@@ -19,7 +19,7 @@ carouselPage2 = function(){
               div(
                 class="globe-outercontainer", style="
     position: absolute;
-    bottom: 14%;
+    bottom: 10%;
     left: 10%;width:200px;height:200px;
                 ",
                 div(
