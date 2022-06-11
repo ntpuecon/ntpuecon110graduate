@@ -2,9 +2,17 @@
 # test globe
 
 ```{js}
-seq_alongObject = function(obj){
-return Object.keys(obj);
+console.clear();
+
+for (const value of Object.values(split_gsData)) {
+  // location: value[0]
+  // name: value[5]
+  // trace: value[9]
+  let name=value[5];
+  let trace=Number.parseInt(value[9])
+  Plotly.restyle(widget, {"visible":true,"hovertext":name,"hoverinfo":"text+name"}, [trace]);
 }
+
 
 
 ```
@@ -77,38 +85,11 @@ tag_carousel() |>
   app$update()
 ```
 
-## joinIcon
-
-
-```{js}
-$("#switchGlobe").click(function(){
-  console.log("switch")
-  $("#globeplace").toggleClass("back");
-})
-
-```
-
+## Autojoin
 
 ```{js}
-function elementsOverlap(el1, el2) {
-  const domRect1 = el1.getBoundingClientRect();
-  const domRect2 = el2.getBoundingClientRect();
 
-  return !(
-    domRect1.top > domRect2.bottom ||
-    domRect1.right < domRect2.left ||
-    domRect1.bottom < domRect2.top ||
-    domRect1.left > domRect2.right
-  );
-}
-function isGlobeOverlapWish(){
-  let result = elementsOverlap($("#greetingGallery")[0],$("#globeplace")[0])
-  console.log(result);
-  return result;
-}
 ```
-
-
 
 
 

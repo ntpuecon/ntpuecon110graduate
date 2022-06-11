@@ -18,11 +18,21 @@ refresh_carousel = function(){
          countriesExists = Object.keys(split_gsData);
          traces = seq_along(countriesExists);
       });
-
+      update_globeCountryHolder();
       showCurrentTrees();
     });
 }
 var splitData={}
+update_globeCountryHolder = function(){
+  for (const value of Object.values(split_gsData)) {
+  // location: value[0]
+  // name: value[5]
+  // trace: value[9]
+  let name=value[5];
+  let trace=Number.parseInt(value[9])
+  Plotly.restyle(widget, {"visible":true,"hovertext":name,"hoverinfo":"text+name"}, [trace]);
+}
+}
 obtain_validGsData = function(gsData){
   valid_gsData=gsData.values.filter(function(a){return a.includes("TRUE")})
   update_splitData = function(arrayX){

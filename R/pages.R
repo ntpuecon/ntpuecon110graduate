@@ -61,6 +61,10 @@ page_wish = function(){
     )
   carouselPage() |>
     htmltools::save_html(
+      "docs/wish.html"
+    )
+  carouselPage() |>
+    htmltools::save_html(
       "temp/wish.html"
     )
   carouselPage()
