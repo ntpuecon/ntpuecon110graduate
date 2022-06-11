@@ -7,6 +7,11 @@ $(function(){
   $("div.sizecontainer-sizeadjustment-minus").click(function(){
     decreaseGlobesize();
   });
+
+  $("div.sizecontainer-sizeadjustment-reset").click(function(){
+    document.querySelector("a.modebar-btn[data-attr=reset]").dispatchEvent(new Event("click"));
+  });
+
   /*$(".carousel").click(function(){
   if(tintId!=null){
   clearInterval(tintId);

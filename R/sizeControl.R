@@ -3,6 +3,8 @@ tag_sizeControl <-function(){
     tags$div(class = "sizecontainer-sizeadjustment",
       tags$div(class = "sizecontainer-sizeadjustment-plus",
         tags$i(class="material-icons", "add")),
+      tags$div(class = "sizecontainer-sizeadjustment-reset",
+        tags$i(class="material-icons", "center_focus_strong")),
       tags$div(class = "sizecontainer-sizeadjustment-minus",
         tags$i(class="material-icons", "remove"))),
     tags$div(class = "sizecontainer-iconsize",
