@@ -1,10 +1,14 @@
 $(function(){
    $("#play_arrow").click(function(){
+     if(currentPlayStatus==="play") return;
+     currentPlayStatus="play";
       tintId=setInterval(function(){greetingGallery.next()},2000);
       $("#play_arrow").toggle();
       $("#stop").toggle();
     });
   $("#stop").click(function(){
+    if(currentPlayStatus==="stop") return;
+    currentPlayStatus="stop";
     clearInterval(tintId);
     tintId=null;
     $("#play_arrow").toggle();
@@ -47,6 +51,7 @@ speedControlDown = function () {
         });
     });
 };
+currentPlayStatus="stop";
 speedControlUp = function () {
     var div = $(".speedcontainer-speedadjustment:not(:visible)");
 
@@ -99,7 +104,7 @@ increaseCarouselSpeed = function(){
   clearInterval(tintId);
   tintId=null;
   tintId=setInterval(function(){greetingGallery.next()},currentspeed);
-}
+};
 decreaseCarouselSpeed = function(){
   if(currentspeedchoice <=0) return;
   currentspeedchoice-=1;
