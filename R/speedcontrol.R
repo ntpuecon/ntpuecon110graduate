@@ -13,9 +13,10 @@ tag_speedControl <-function(){
       tags$i(class="material-icons", "speed")
       ))
 }
+
 speedControl_dependency <- function(){
   htmltools::htmlDependency(
-    name="ntpuecon110graduate",
+    name="speedcontrol",
     version="1.0.0",
     src=c(file=system.file("/app",  package = "ntpuecon110graduate")),
     style="css/speedControl.css",

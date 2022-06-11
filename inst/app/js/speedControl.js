@@ -71,14 +71,14 @@ speedControlUp = function () {
     });}
 
 speedControlToggle = function(){
-        if(currentToggle === 0){
-          currentToggle=1 } else {
-            currentToggle=0
+        if(currentSpeedToggle === 0){
+          currentSpeedToggle=1 } else {
+            currentSpeedToggle=0
           }
-        toggleFunctions[currentToggle]()
+        speed_toggleFunctions[currentSpeedToggle]()
 }
-toggleFunctions = [speedControlUp, speedControlDown];
-currentToggle=1;
+speed_toggleFunctions = [speedControlUp, speedControlDown];
+currentSpeedToggle=1;
 
   speedControlDown();
 

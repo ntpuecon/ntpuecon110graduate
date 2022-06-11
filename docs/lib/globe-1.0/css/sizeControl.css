@@ -1,0 +1,11 @@
+.sizecontainer{width:30px;height:132px;
+    position: absolute;
+    top: -102px;
+}
+.zoomcontrol{position:relative;}
+.sizecontainer-sizeadjustment{display: flex; flex-direction:column;justify-content:space-between;align-items:flex-start;padding:0px;gap:20px;position:absolute;width:30px;height:81px;left:0px;top:0px; /*visibility:hidden;*/
+
+}
+.sizecontainer-sizeadjustment-plus{flex:none;order:0;flex-grow:0;margin:px;width:30px;height:30px;}
+.sizecontainer-sizeadjustment-minus{flex:none;order:1;flex-grow:0;margin:px;width:30px;height:30px;}
+.sizecontainer-iconsize{position:absolute;width:30px;height:30px;left:0px;top:102px;}

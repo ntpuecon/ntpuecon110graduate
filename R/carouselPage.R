@@ -54,7 +54,7 @@ carouselGlobeNav = function(){
       icon="menu-open"
     ))
 }
-zoomControl= function(){
+globeZoomControl= function(){
   require(htmltools)
   div(
     class="zoomcontrol",
@@ -69,11 +69,32 @@ zoomControl= function(){
         style="display:none;",
         tags$i(class="material-icons", "stop")),
     div(class="speedControlInsidePanel",
-    ui_speedControl()),
+      ui_speedControl()),
     div(
       class="zoombtn", id="zoom-in",
       tags$i(class="material-icons", "add")
     )
+  ) |>
+    attachAppDependencies()
+}
+zoomControl= function(){
+  require(htmltools)
+  div(
+    class="zoomcontrol",
+    div(class="speedControlInsidePanel",
+      ui_sizeControl()),
+    # div(
+    #   class="zoombtn", id="zoom-out",
+    #   tags$i(class="material-icons", "remove")
+    # ),
+    div(class='zoombtn', id="switchPosition",
+      tags$i(class="material-icons", "move_up")),
+    div(class='zoombtn', id="play_arrow",
+      tags$i(class="material-icons", "play_arrow")),  div(class='zoombtn', id="stop",
+        style="display:none;",
+        tags$i(class="material-icons", "stop")),
+    div(class="speedControlInsidePanel",
+    ui_speedControl())
   ) |>
     attachAppDependencies()
 }

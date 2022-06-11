@@ -111,7 +111,14 @@ plot_capitalTrees = function(){
       margin=list(l=0, r=0, t=0, b=0)
     ) |>
     plotly::config(
-      displayModeBar=F
+      displaylogo=F, displayModeBar=T
+    ) |>
+    plotly::layout(
+      modebar=list(
+        # add='reset'
+        # check: https://github.com/plotly/plotly.js/blob/master/src/components/modebar/buttons.js
+        remove=c("zoomInGeo", "zoomOutGeo","lasso","toimage","pan","lasso","select","hoverClosestGeo")
+      )
     ) |>
     htmlwidgets::onRender("function(e){widget=e;
       }")
