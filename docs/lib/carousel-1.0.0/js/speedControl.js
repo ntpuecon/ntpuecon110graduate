@@ -10,6 +10,14 @@ $(function(){
     $("#play_arrow").toggle();
     $("#stop").toggle();
   });
+
+  $("div.speedcontainer-speedadjustment-plus").click(function(){
+    decreaseCarouselSpeed();
+  });
+
+  $("div.speedcontainer-speedadjustment-minus").click(function(){
+    increaseCarouselSpeed();
+  });
   /*$(".carousel").click(function(){
   if(tintId!=null){
   clearInterval(tintId);
@@ -82,3 +90,21 @@ currentToggle=1;
 
 })
 
+speed = [500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 7000];
+currentspeedchoice = 3;
+increaseCarouselSpeed = function(){
+  if(currentspeedchoice >=8) return;
+  currentspeedchoice+=1;
+  currentspeed=speed[currentspeedchoice];
+  clearInterval(tintId);
+  tintId=null;
+  tintId=setInterval(function(){greetingGallery.next()},currentspeed);
+}
+decreaseCarouselSpeed = function(){
+  if(currentspeedchoice <=0) return;
+  currentspeedchoice-=1;
+  currentspeed=speed[currentspeedchoice];
+  clearInterval(tintId);
+  tintId=null;
+  tintId=setInterval(function(){greetingGallery.next()},currentspeed);
+}
