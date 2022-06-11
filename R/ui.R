@@ -37,12 +37,12 @@ form <- function(ids=generate_ids(), .names= NULL, postUrl= NULL, href="index.ht
       "給同學的祝福"))}
   buttons =       {
     tags$div(class = "row center-align",
-      {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",
-        type = "button",
-        name = "action",
-        "預覽",
-        tags$i(class = "material-icons right",
-          "pageview"))},
+      # {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",
+        # type = "button",
+        # name = "action",
+        # "預覽",
+        # tags$i(class = "material-icons right",
+        #   "pageview"))},
       {tags$button(class = "btn waves-effect waves-light purple lighten-1", id="submitButton",
         type = "submit",
         name = "action",
