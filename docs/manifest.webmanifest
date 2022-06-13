@@ -1,9 +1,9 @@
 {
-  "name": "世界有多大",
-  "short_name": "世界有多大",
-  "description": "What it does!",
-  "lang": "en-US",
-  "start_url": "https://ntpuecon.github.io/ntpuecon110graduate/index.html",
+  "name": "Best Wishes 2022",
+  "short_name": "Best Wishes 2022",
+  "description": "這是給國立臺北大學經濟學系2022年學士班及進修學士班畢業生互道畢業祝福的App。",
+  "lang": "zh-TW",
+  "start_url": "ntpuecon110graduate/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
@@ -11,6 +11,10 @@
     {
       "src": "icons/ntpuecon110graduate.png",
       "sizes": "144x144"
+    },
+    {
+      "src": "icons/ntpuecon110graduate512.png",
+      "sizes": "512x512"
     }
   ],
   "shortcuts": [
