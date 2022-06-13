@@ -4,8 +4,31 @@ body {
    width:100%;
    height:100%;
 }
+.footer-control {
+  width: 100% !important;
+  bottom: 3% !important;
+  /* Auto layout */
 
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-end;
+padding: 10px 20px 10px 20px;
+gap: 10px;
+}
+.wishBtnContainer {
+  /* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
 .zoomcontrol {
+  /* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
   /* Auto layout */
 
 display: flex;
@@ -13,13 +36,14 @@ flex-direction: row;
 justify-content: space-between;
 align-items: flex-end;
 padding: 0px;
-gap: 65px;
+gap: 40px;
 
 position: absolute;
-width: 125px;
+/*width: 125px;*/
 height: 30px;
-    bottom: -50px;
-    left: calc(50% - 125px/2);
+    /*bottom: -50px;
+    left: 15%;*/
+    /*left: calc(50% - 125px/2);*/
 }
 .zoombtn {
   flex: none;
@@ -52,6 +76,15 @@ opacity: 0.5;
 .sidenav-trigger > i {
   color: green;
 }
+i {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 .elegant-scroll {
 
   width: 100%;
@@ -69,7 +102,11 @@ nav {
 -webkit-box-shadow:none !important;
 box-shadow:none !important;}
 .carousel {
-  overflow: visible; position:absolute; top:0%;}
+  /*overflow: initial !important;*/
+  overflow-x: hidden !important;
+  overflow-y: visible !important; position:absolute; top:0%;
+  height: 600px !important;
+}
 .signature-img {
   background-size: contain;
 }
@@ -93,7 +130,7 @@ box-shadow:none !important;}
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
 /*    .carousel {height:535px;}*/
     .carousel .carousel-item {width:250px !important;}
-      .carousel .carousel-item {margin-top: -60px;}
+      .carousel .carousel-item {margin-top: -125px;}
 .card {
 /* position: fixed !important; */
 }
@@ -122,8 +159,8 @@ box-shadow:none !important;}
 }
 .page-footer {
   position:absolute !important;
-  bottom: 5%;
   background: transparent !important;
+  max-width: 400px;
 }
 .menu-title {
   width: fit-content;

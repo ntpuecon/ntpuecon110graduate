@@ -1,10 +1,11 @@
 
 
 $(function(){
+  /*
   const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
 
-/* Put code here */
+
 window.addEventListener('beforeinstallprompt', (event) => {
   // Prevent the mini-infobar from appearing on mobile.
   event.preventDefault();
@@ -16,17 +17,12 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 
 
-/* Only register a service worker if it's supported */
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js');
 }
 
-/**
- * Warn the page must be served over HTTPS
- * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
- * Installability requires a service worker with a fetch event handler, and
- * if the page isn't served over HTTPS, the service worker won't load.
- */
+
 if (window.location.protocol === 'http:') {
   const requireHTTPS = document.getElementById('requireHTTPS');
   const link = requireHTTPS.querySelector('a');
@@ -56,7 +52,7 @@ window.addEventListener('appinstalled', (event) => {
   console.log('👍', 'appinstalled', event);
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
-});
+}); */
 	// ---- this would be the plugin ----
 	// special event for non-preventDefault
 	jQuery.event.special.touchstart = {

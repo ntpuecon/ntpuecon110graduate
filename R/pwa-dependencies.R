@@ -1,4 +1,4 @@
-1#' PWA dependencies utils
+#' PWA dependencies utils
 #'
 #' @description This function attaches PWA manifest and icons to the given tag
 #'
@@ -18,4 +18,4 @@ add_pwa_deps <- function(tag) {
  )
  tagList(tag, pwa_deps)
 }
-
+    

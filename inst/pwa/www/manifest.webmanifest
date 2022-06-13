@@ -1,9 +1,9 @@
 {
-  "name": "世界有多大",
-  "short_name": "我的世界",
+  "name": "My Progressive Web App",
+  "short_name": "My App",
   "description": "What it does!",
   "lang": "en-US",
-  "start_url": "/ntpuecon110graduate/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",

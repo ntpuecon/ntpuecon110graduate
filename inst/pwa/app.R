@@ -1,9 +1,5 @@
-library(shiny)
+ui={page_wish2() |> add_pwa_deps() |> add_pwacompat_deps()}
 
-ui <- carouselPage() |> add_pwa_deps()
+server=function(input, output,session){}
 
-server <- function(input, output, session){
-
-}
-
-shinyApp(ui, server)
+shiny::shinyApp(ui=ui, server=server)

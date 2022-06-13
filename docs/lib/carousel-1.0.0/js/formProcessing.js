@@ -112,7 +112,7 @@ content_paragraph = function(content){
   //ct.split("\n").forEach(
   /\n+/[Symbol.split](ct).forEach(
     function(p){
-    console.log(p);
+    //console.log(p);
       result+='<p class="flow-text">'+p+'</p>';
     });
   return result;

@@ -1,0 +1,14 @@
+.speedcontainer{width:30px;height:132px;
+    position: absolute;
+    top: -102px;
+}
+.zoomcontrol{position:relative;}
+.speedcontainer-speedadjustment{display: flex; flex-direction:column;justify-content:space-between;align-items:flex-start;padding:0px;gap:20px;position:absolute;width:30px;height:81px;left:0px;top:0px; /*visibility:hidden;*/
+
+}
+.speedcontainer-speedadjustment-plus{flex:none;order:0;flex-grow:0;margin:px;width:30px;height:30px;}
+.speedcontainer-speedadjustment-minus{flex:none;order:1;flex-grow:0;margin:px;width:30px;height:30px;}
+.speedcontainer-iconspeed{position:absolute;width:30px;height:30px;left:0px;top:102px;}
+.Vector{position:absolute;left:20.83%;right:20.83%;top:20.83%;bottom:20.83%;background:#000000;}
+.Vector1{position:absolute;left:16.67%;right:16.67%;top:50%;bottom:50%;border:2.5px solid #000000;}
+.Vector2{position:absolute;left:8.47%;right:8.34%;top:16.82%;bottom:16.67%;background:#000000;}

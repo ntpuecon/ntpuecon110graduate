@@ -1,0 +1,30 @@
+.controlPanel{/* controlPanel */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 9px;
+
+position: relative;
+width: 159px;
+height: 120px;
+}
+.controlPanel-motionControl{box-sizing:border-box;position:absolute;width:120px;height:120px;background:#FFFFFF;border:1px solid #000000;border-radius:120px;}
+.up{display:flex;flex-direction:column;align-items:center;padding:0px;gap:10px;position:absolute;width:40px;height:40px;left:calc(50% - 40px/2);top:0px;background:#E53935;/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;}
+
+.controlPanel-zoomControl{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:0px;gap:60px;width:30px;height:120px;/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;}
+.controlPanel-zoomControl-in{flex:none;order:0;flex-grow:0;margin:px;width:30px;height:30px;}
+.controlPanel-zoomControl-out{flex:none;order:1;flex-grow:0;margin:px;width:30px;height:30px;}

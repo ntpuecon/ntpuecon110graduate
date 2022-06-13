@@ -1,14 +1,26 @@
 $(function(){
    $("#play_arrow").click(function(){
+     if(currentPlayStatus==="play") return;
+     currentPlayStatus="play";
       tintId=setInterval(function(){greetingGallery.next()},2000);
       $("#play_arrow").toggle();
       $("#stop").toggle();
     });
   $("#stop").click(function(){
+    if(currentPlayStatus==="stop") return;
+    currentPlayStatus="stop";
     clearInterval(tintId);
     tintId=null;
     $("#play_arrow").toggle();
     $("#stop").toggle();
+  });
+
+  $("div.speedcontainer-speedadjustment-plus").click(function(){
+    decreaseCarouselSpeed();
+  });
+
+  $("div.speedcontainer-speedadjustment-minus").click(function(){
+    increaseCarouselSpeed();
   });
   /*$(".carousel").click(function(){
   if(tintId!=null){
@@ -39,6 +51,7 @@ speedControlDown = function () {
         });
     });
 };
+currentPlayStatus="stop";
 speedControlUp = function () {
     var div = $(".speedcontainer-speedadjustment:not(:visible)");
 
@@ -63,14 +76,14 @@ speedControlUp = function () {
     });}
 
 speedControlToggle = function(){
-        if(currentToggle === 0){
-          currentToggle=1 } else {
-            currentToggle=0
+        if(currentSpeedToggle === 0){
+          currentSpeedToggle=1 } else {
+            currentSpeedToggle=0
           }
-        toggleFunctions[currentToggle]()
+        speed_toggleFunctions[currentSpeedToggle]()
 }
-toggleFunctions = [speedControlUp, speedControlDown];
-currentToggle=1;
+speed_toggleFunctions = [speedControlUp, speedControlDown];
+currentSpeedToggle=1;
 
   speedControlDown();
 
@@ -82,3 +95,21 @@ currentToggle=1;
 
 })
 
+speed = [500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 7000];
+currentspeedchoice = 3;
+increaseCarouselSpeed = function(){
+  if(currentspeedchoice >=8) return;
+  currentspeedchoice+=1;
+  currentspeed=speed[currentspeedchoice];
+  clearInterval(tintId);
+  tintId=null;
+  tintId=setInterval(function(){greetingGallery.next()},currentspeed);
+};
+decreaseCarouselSpeed = function(){
+  if(currentspeedchoice <=0) return;
+  currentspeedchoice-=1;
+  currentspeed=speed[currentspeedchoice];
+  clearInterval(tintId);
+  tintId=null;
+  tintId=setInterval(function(){greetingGallery.next()},currentspeed);
+}
