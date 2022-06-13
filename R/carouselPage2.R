@@ -6,7 +6,7 @@ carouselPage2 = function(){
     # carouselGlobeNav(),
     # div(style="position:absolute; bottom: 5%; right: 45%; z-index:2;display:none;", id="controlContainer",
     #   globeControl()),
-    installation(),
+    # installation(),
     tags$main(
       style="position:fixed; width:100%;",
       div(class="row",
