@@ -34,7 +34,7 @@ form <- function(ids=generate_ids(), .names= NULL, postUrl= NULL, href="index.ht
     tags$textarea(id = ids[[4]], name=.names[[4]],
       class = "materialize-textarea form-data"),
     tags$label(`for` = ids[[4]],
-      "給同學的祝福"))}
+      "給同學的祝福(若要修改，重覆送出祝福新可蓋舊。)"))}
   buttons =       {
     tags$div(class = "row center-align",
       # {tags$button(class = "activator btn waves-effect waves-light purple lighten-1",

@@ -1,0 +1,35 @@
+{
+  "name": "Best Wishes 2022",
+  "short_name": "Best Wishes 2022",
+  "description": "這是給國立臺北大學經濟學系2022年學士班及進修學士班畢業生互道畢業祝福的App。",
+  "lang": "zh-TW",
+  "scope": "/",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icons/ntpuecon110graduate.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/ntpuecon110graduate512.png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shortcut",
+      "short_name": "Shortcut",
+      "description": "Do something",
+      "url": "/?foo=1",
+      "icons": [
+        {
+          "src": "icons/shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

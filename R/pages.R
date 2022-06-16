@@ -69,7 +69,7 @@ page_wish = function(){
     )
   carouselPage()
 }
-page_wish2 = function(){
+page_index = page_wish2 = function(){
   carouselPage2() |>
     htmltools::save_html(
       "docs/index.html"
@@ -93,5 +93,5 @@ page_form = function(){
     htmltools::save_html(
       "temp/form.html"
     )
-
+  greetingForm()
 }
