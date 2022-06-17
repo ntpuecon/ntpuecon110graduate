@@ -8,7 +8,7 @@ carouselPage2 = function(){
     #   globeControl()),
     # installation(),
     tags$main(
-      style="position:fixed; width:100%;",
+      style="position:fixed; width:100%; top:0%",
       div(class="row",
         div(class="col s12 m6 offset-m3",
           style="height:500px;",

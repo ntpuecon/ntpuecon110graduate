@@ -8,6 +8,7 @@ $(function(){
     decreaseGlobesize();
   });
 
+  $("#globeopaque").click(opacityChange);
   $("div.sizecontainer-sizeadjustment-reset").click(function(){
     document.querySelector("a.modebar-btn[data-attr=reset]").dispatchEvent(new Event("click"));
   });
@@ -117,4 +118,19 @@ $("#globeplace").width(size+50);
 )
 //$("#globeplace").toggle();
 
+}
+opacityStatus=0;
+  opacityToggle0 = function(){
+    $("#globeopaque > i").css("opacity",1);
+    $(".globe-outercontainer").css("opacity", 0.4);
+    opacityStatus=1;
+  }
+  opacityToggle1 = function(){
+    $("#globeopaque > i").css("opacity",0.4);
+    $(".globe-outercontainer").css("opacity", 1);
+    opacityStatus=0;
+  }
+  opacityToggleFuns = [opacityToggle0, opacityToggle1];
+opacityChange=function(){
+  opacityToggleFuns[opacityStatus]()
 }

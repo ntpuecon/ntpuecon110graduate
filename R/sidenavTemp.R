@@ -33,32 +33,8 @@ sidenav = function(nav){
     tags$div(
       id = "slide-out",
       class = "sidenav",
-
-    tags$ul(
-      tags$li(tags$div(class = "user-view",
-        tags$div(class = "background",
-          tags$img(src = "images/office.jpg")),
-        tags$a(href = "#user",
-          tags$img(class = "circle",
-            src = "images/yuna.jpg")),
-        tags$a(href = "#name",
-          tags$span(class = "white-text name",
-            "John Doe")),
-        tags$a(href = "#email",
-          tags$span(class = "white-text email",
-            "jdandturk@gmail.com")))),
-      tags$li(tags$a(href = "#!",
-        tags$i(class = "material-icons",
-          "cloud"),
-        "First Link With Icon")),
-      tags$li(tags$a(href = "#!",
-        "Second Link")),
-      tags$li(tags$div(class = "divider")),
-      tags$li(tags$a(class = "subheader",
-        "Subheader")),
-      tags$li(tags$a(class = "waves-effect",
-        href = "#!",
-        "Third Link With Waves"))))
+      sidenav_content()
+    )
 
   ) -> tag_element
 
@@ -68,4 +44,27 @@ sidenav = function(nav){
     var instancesSN = M.Sidenav.init(elemsSN);
   });")
   ) |> attachAppDependencies()
+}
+sidenav_content = function(){
+  require(htmltools)
+  tagList(
+    tags$style(
+      ".li.vertical-autolayout {display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 11px;}
+      .li.vertical-autolayout > div {
+      /* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+      }"
+    ),
+  tags$ul(
+    tags$li(
+      tags$a(class="btn","經濟系系友會LINE", href="https://page.line.me/?accountId=826wroqn", target="_blank")))
+
+  ) #end of tagList
 }
