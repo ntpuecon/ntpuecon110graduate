@@ -30,8 +30,11 @@ sidenav = function(nav){
       class = "sidenav-trigger",
       tags$i(class = "material-icons",
         "menu"))),
-    tags$ul(id = "slide-out",
+    tags$div(
+      id = "slide-out",
       class = "sidenav",
+
+    tags$ul(
       tags$li(tags$div(class = "user-view",
         tags$div(class = "background",
           tags$img(src = "images/office.jpg")),
@@ -55,7 +58,7 @@ sidenav = function(nav){
         "Subheader")),
       tags$li(tags$a(class = "waves-effect",
         href = "#!",
-        "Third Link With Waves")))
+        "Third Link With Waves"))))
 
   ) -> tag_element
 
