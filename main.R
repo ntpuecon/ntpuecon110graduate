@@ -26,9 +26,9 @@ apptest:::startAppTest()
 apptest::pwa()
 # change PWA manifest
 pwa$json |> View()
-pwa$json$name="NTPU Economics Wish 2022"
+pwa$json$name="Ntpu Economics wiSH 2022"
 pwa$json$short_name="NESH 2022"
-pwa$json$description="這是給國立臺北大學經濟學系2022年學士班及進修學士班畢業生互道畢業祝福的App ( N.tpu E.conomics wi.SH，簡稱NESH)。"
+pwa$json$description="這是給國立臺北大學經濟學系2022年學士班及進修學士班畢業生互道畢業祝福的App ( Ntpu Economics wiSH, NESH)。"
 pwa$json$scope="/"
 pwa$json$start_url="index.html"
 pwa$json$orientation="portrait"
