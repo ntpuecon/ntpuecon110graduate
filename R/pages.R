@@ -83,12 +83,12 @@ page_index = page_wish2 = function(){
       "temp/wish.html"
     )
   tagList(
-    tags$div(
-      id="installContainer", class="hide",
-      tags$a(
-        id="butInstall",
-        class="waves-effect waves-light btn", "安裝此App"
-      )),
+    # tags$div(
+    #   id="installContainer", class="hide",
+    #   tags$a(
+    #     id="butInstall",
+    #     class="waves-effect waves-light btn", "安裝此App"
+    #   )),
     carouselPage2()
   )
 
