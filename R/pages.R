@@ -82,7 +82,16 @@ page_index = page_wish2 = function(){
     htmltools::save_html(
       "temp/wish.html"
     )
-  carouselPage2()
+  tagList(
+    tags$div(
+      id="installContainer", class="hide",
+      tags$a(
+        id="butInstall",
+        class="waves-effect waves-light btn", "安裝此App"
+      )),
+    carouselPage2()
+  )
+
 }
 page_form = function(){
   greetingForm() |>
