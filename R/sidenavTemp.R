@@ -51,20 +51,20 @@ sidenav = function(nav){
 sidenav_content = function(){
   require(htmltools)
   tagList(
-    tags$style(
-      ".li.vertical-autolayout {display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 11px;}
-      .li.vertical-autolayout > div {
-      /* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-      }"
-    ),
+#     tags$style(
+#       HTML(".li.vertical-autolayout {display: flex;
+# flex-direction: column;
+# align-items: center;
+# padding: 0px;
+# gap: 11px;}
+#       .li.vertical-autolayout > div {
+#       /* Inside auto layout */
+#
+# flex: none;
+# order: 0;
+# flex-grow: 0;
+#       }")
+#     ),
     tags$div(class="designer",
     tags$div(class="story",
       tags$p("Ntpu Economic wiSH（簡稱NESH）是給國立臺北大學學士班及進修學士班互留祝福的App，每一則祝福種出一顆綠樹。點擊樹可叫出種樹的祝福卡，雙擊卡片可叫出所種下的樹。畢業後同學也可透過此App，更新自己的訊息，讓彼此知道自己的近況。")),
