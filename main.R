@@ -33,7 +33,7 @@ pwa$json$scope="/"
 pwa$json$start_url="index.html"
 pwa$json$orientation="portrait"
 pwa$updateManifest()
-pwa_index() |> app$test()
+pwa_index_sidenav() |> app$test()
 page_form() |> app$test("form.html")
 
 
