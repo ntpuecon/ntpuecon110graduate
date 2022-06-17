@@ -62,8 +62,17 @@ attachAppDependencies = function(p, page=c("form","globe","greeting")){
     # materialiseDash::attachMaterialiseDep() |>
   htmltools::tagList(
     dep$all(),
-    appDep(page=page)
+    appDep(page=page),
+    imgDep()
     # appDepOnCloud() #appDep()
+  )
+}
+imgDep = function(){
+  htmltools::htmlDependency(
+    name="img",
+    version="1.0",
+    src=c(file=system.file("app-img", package="ntpuecon110graduate")),
+    all_files = T
   )
 }
 
