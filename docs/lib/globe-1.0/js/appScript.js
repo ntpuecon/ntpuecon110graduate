@@ -1,10 +1,11 @@
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
+  console.log("service-worker registered.")
 }
 
-$(function(){
+//$(function(){
   const divInstall = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
+  const butInstall = document.getElementById('butInstall');
 
 
   window.addEventListener('beforeinstallprompt', (event) => {
@@ -41,7 +42,7 @@ butInstall.addEventListener('click', async () => {
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
-})
+//})
 
 
 screen.orientation.lock("portrait");
