@@ -68,7 +68,7 @@ background: url(image.png);
 opacity: 0.5;
 }
 #slide-out {
-  max-width: 250px;
+  max-width: 70vw;
 }
 .elegant-scroll::-webkit-scrollbar {
   display: none;

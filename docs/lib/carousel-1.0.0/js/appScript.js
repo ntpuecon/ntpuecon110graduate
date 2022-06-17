@@ -4,6 +4,7 @@ if ('serviceWorker' in navigator) {
 }
 
 //$(function(){
+/*
   const divInstall = document.getElementById('installContainer');
   const butInstall = document.getElementById('butInstall');
 
@@ -42,6 +43,7 @@ butInstall.addEventListener('click', async () => {
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null;
 });
+*/
 //})
 
 

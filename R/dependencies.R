@@ -87,3 +87,18 @@ demo= function(){
       appDep()
     )
 }
+add_custom_installation_dep = function(tag){
+  tagList(
+    tag,
+    htmltools::htmlDependency(
+      name="pwa",
+      version="1.0.0",
+      src=c(file=system.file(
+        "pwa/js", package="ntpuecon110graduate")),
+      script=list(
+        src="custom-installation.js",
+        defer=""
+      )
+    )
+  )
+}

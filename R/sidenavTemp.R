@@ -1,4 +1,5 @@
 pwa_index_sidenav = function(){
+  require(htmltools)
   nav=tagList(
     tags$style('
 
@@ -60,8 +61,8 @@ sidenav = function(nav){
 
   tag_element |> tagList(
     tags$script("document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
+    var elemsSN = document.querySelectorAll('.sidenav');
+    var instancesSN = M.Sidenav.init(elemsSN);
   });")
   ) |> attachAppDependencies()
 }
