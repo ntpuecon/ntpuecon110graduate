@@ -9,15 +9,15 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/icons/ntpuecon110graduate512-512.png",
+      "src": "https://ntpuecon.github.io/ntpuecon110graduate/icons/ntpuecon110graduate512-512.png",
       "sizes": "144x144"
     },
     {
-      "src": "/icons/ntpuecon110graduate512-192.png",
+      "src": "https://ntpuecon.github.io/ntpuecon110graduate/icons/ntpuecon110graduate512-192.png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/ntpuecon110graduate512-144.png",
+      "src": "https://ntpuecon.github.io/ntpuecon110graduate/icons/ntpuecon110graduate512-144.png",
       "sizes": "512x512"
     }
   ],
