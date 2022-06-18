@@ -33,9 +33,9 @@ sidenav = function(nav){
         "menu"))),
     tags$div(
       id = "slide-out",
-      class = "sidenav",
+      class = "sidenav sidenav-fixed",
       div(style="background: url(lib/img-1.0/side.jpg) no-repeat center;background-size: contain;
-    background-position: top; background-color:white; height:100%"),
+    background-position: top; background-color:white; height:500px;"),
       sidenav_content()
     )
 
