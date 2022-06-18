@@ -3,21 +3,21 @@
   "short_name": "NESH 2022",
   "description": "這是給國立臺北大學經濟學系2022年學士班及進修學士班畢業生互道畢業祝福的App ( N.tpu E.conomics wi.SH，簡稱NESH)。",
   "lang": "zh-TW",
-  "start_url": "/ntpuecon110graduate/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/ntpuecon110graduate/icons/ntpuecon110graduate512-512.png",
+      "src": "/icons/ntpuecon110graduate512-512.png",
       "sizes": "144x144"
     },
     {
-      "src": "/ntpuecon110graduate/icons/ntpuecon110graduate512-192.png",
+      "src": "/icons/ntpuecon110graduate512-192.png",
       "sizes": "192x192"
     },
     {
-      "src": "/ntpuecon110graduate/icons/ntpuecon110graduate512-144.png",
+      "src": "/icons/ntpuecon110graduate512-144.png",
       "sizes": "512x512"
     }
   ],
@@ -29,12 +29,12 @@
       "url": "/?foo=1",
       "icons": [
         {
-          "src": "/ntpuecon110graduate/icons/shortcut.png",
+          "src": "/icons/shortcut.png",
           "sizes": "192x192"
         }
       ]
     }
   ],
-  "scope": "/ntpuecon110graduate/",
+  "scope": "/",
   "orientation": "portrait"
 }
