@@ -36,7 +36,11 @@
 <link href="lib/sidenameCarousel-1.0.0/css/globe.css" rel="stylesheet" />
 <script src="lib/carousel-1.0.0/js/carouselglobe.js"></script>
 <script src="lib/globe-1.0/js/globe.js"></script>
+<link rel="canonical" href="https://ntpuecon.github.io/ntpuecon110graduate/" />
+  <link rel="manifest" href="/ntpuecon110graduate/manifest.webmanifest">
+<!--
 <link rel="manifest" href="manifest.webmanifest"  />
+-->
 <link rel="icon" type="image/png" href="icons/icon-144.png" sizes="144x144" />
 <script src="lib/pwacompat-2.0.17/js/pwacompat.min.js"></script>
 <script src="lib/pwa-1.0.0/custom-installation.js" defer=""></script>
@@ -44,6 +48,14 @@
 
 </head>
 <body>
+  <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          '/ntpuecon110graduate/sw.js',
+          {scope: '/ntpuecon110graduate/'}
+        )
+      }
+  </script>
 <style>
 
 </style>
