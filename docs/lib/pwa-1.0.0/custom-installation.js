@@ -1,13 +1,3 @@
-var GHPATH = '/ntpuecon110graduate';
-
-// Choose a different app prefix name
-var APP_PREFIX = 'gppwa_';
-
-// The version of the cache. Every time you change any of the files
-// you need to change this version (version_01, version_02…).
-// If you don't change the version, the service worker will give your
-// users the old files!
-var VERSION = 'v01';
 
 const divInstall = document.getElementById("installContainer");
 const butInstall = document.getElementById("butInstall");
@@ -49,9 +39,11 @@ window.addEventListener('appinstalled', (event) => {
 });
 
 /* Only register a service worker if it's supported */
+/*
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("https://ntpuecon.github.io/ntpuecon110graduate/service-worker.js");
 }
+*/
 
 /**
  * Warn the page must be served over HTTPS
