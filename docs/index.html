@@ -36,8 +36,10 @@
 <link href="lib/sidenameCarousel-1.0.0/css/globe.css" rel="stylesheet" />
 <script src="lib/carousel-1.0.0/js/carouselglobe.js"></script>
 <script src="lib/globe-1.0/js/globe.js"></script>
-<link rel="canonical" href="https://ntpuecon.github.io/ntpuecon110graduate/" />
-  <link rel="manifest" href="/ntpuecon110graduate/manifest.webmanifest">
+
+    <link rel="canonical" href="https://ntpuecon.github.io/ntpuecon110graduate/" />
+
+  <link rel="manifest" href="https://ntpuecon.github.io/ntpuecon110graduate/manifest.webmanifest">
 <!--
 <link rel="manifest" href="manifest.webmanifest"  />
 -->
@@ -48,6 +50,14 @@
 
 </head>
 <body>
+   <script>
+  // register ServiceWorker, remember to use absolute path!
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/ntpuecon110graduate/service-worker.js', {scope: '/ntpuecon110graduate/'})
+  }
+
+  // --- Application code here ---
+  </script>
   <!--
   <script>
       if (navigator.serviceWorker) {
