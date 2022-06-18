@@ -50,7 +50,7 @@ window.addEventListener('appinstalled', (event) => {
 
 /* Only register a service worker if it's supported */
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js");
+  navigator.serviceWorker.register("https://ntpuecon.github.io/ntpuecon110graduate/service-worker.js");
 }
 
 /**
