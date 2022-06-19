@@ -1,0 +1,4 @@
+.sidenavContent{display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding: 0px 0px 5px;;gap:3px;position:relative;height:670.34px;}
+.sidenavContent-image{flex:none;order:0;align-self:stretch;flex-grow:0;margin:px;max-height:460px;}
+.sidenavContent-description{margin:px;width:259.77px;height:155.78px;font-family:'Inter';font-style:normal;font-weight:400;font-size:14px;line-height:22px;padding:0 15px;}
+.sidenavContent-footer{flex:none;order:2;align-self:stretch;flex-grow:0;margin:px;height:48.55px;background:#FFFFFF;padding:0 28px;}
